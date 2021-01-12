@@ -82,10 +82,10 @@ export class ApiService {
 
                 if (this.daemon !== 'OK') {
                     this.notifications.add({
-                        title: 'Rutanio Node background error',
-                        hint: 'Messages from the background process received in Rutanio Core',
+                        title: 'Divergenti Node background error',
+                        hint: 'Messages from the background process received in Divergenti Core',
                         message: this.daemon,
-                        icon: (this.daemon.indexOf('Rutanio Core was started in development mode') > -1) ? 'build' : 'warning'
+                        icon: (this.daemon.indexOf('Divergenti Core was started in development mode') > -1) ? 'build' : 'warning'
                     });
                     // this.snackBar.open(this.daemon, null, { duration: 7000 });
                 }
@@ -671,7 +671,7 @@ export class ApiService {
 
         this.notifications.add({
             title: 'Communication error',
-            hint: 'These types of errors are not uncommon, happens when there is issues communicating between Rutanio Core and Rutanio Node background process',
+            hint: 'These types of errors are not uncommon, happens when there is issues communicating between Divergenti Core and Divergenti Node background process',
             message: errorMessage,
             icon: 'warning'
         });

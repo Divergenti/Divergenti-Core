@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2018-2020 Rutanio
+Copyright (c) 2018-2021 Divergenti
 Copyright (c) 2018-2020 FluidChains Inc
 Copyright (c) 2018-2020 City Chain Foundation
 

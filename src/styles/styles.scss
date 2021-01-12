@@ -157,20 +157,20 @@ body {
 }
 
 .main-menu .mat-list-item:hover {
-	background-color: #ff4863;
+	background-color: #61ffd6;
 }
 
 .mat-list-item-focus {
-	border-right: 3px solid #ff4863 !important;
+	border-right: 3px solid #61ffd6 !important;
 }
 
 .main-menu .main-menu-active {
-	border-right: 3px solid #ff4863;
+	border-right: 3px solid #61ffd6;
 }
 
 :focus {
     outline: 0;
-    outline-color: #ff4863;
+    outline-color: #61ffd6;
     outline-style: auto;
     outline-width: 1px;
 }

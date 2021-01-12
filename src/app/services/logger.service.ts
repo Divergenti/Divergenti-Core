@@ -65,20 +65,20 @@ export class Logger {
 
         switch (logLevel) {
             case LogLevel.Verbose:
-                console.log(`[Rutanio Core] ${message}`, ...args);
+                console.log(`[Divergenti Core] ${message}`, ...args);
                 break;
             case LogLevel.Info:
                 // tslint:disable-next-line:no-console
-                console.info(`[Rutanio Core] ${message}`, ...args);
+                console.info(`[Divergenti Core] ${message}`, ...args);
                 break;
             case LogLevel.Warn:
-                console.warn(`[Rutanio Core] ${message}`, ...args);
+                console.warn(`[Divergenti Core] ${message}`, ...args);
                 break;
             case LogLevel.Error:
-                console.error(`[Rutanio Core] ${message}`, ...args);
+                console.error(`[Divergenti Core] ${message}`, ...args);
                 break;
             case LogLevel.Critical:
-                console.error(`[Rutanio Core] [CRITICAL] ${message}`, ...args);
+                console.error(`[Divergenti Core] [CRITICAL] ${message}`, ...args);
                 break;
             default:
                 break;

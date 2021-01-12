@@ -1,13 +1,13 @@
 {
-    "appId": "org.rutanio-core",
-    "artifactName": "Rutanio.Core-${version}-${os}-${arch}.${ext}",
-    "productName": "Rutanio Core",
+    "appId": "cl.divergenti-core",
+    "artifactName": "Divergenti-Core-${version}-${os}-${arch}.${ext}",
+    "productName": "Divergenti Core",
     "asar": true,
     "publish": [
         {
             "provider": "github",
             "owner": "FluidChains",
-            "repo": "Rutanio-Core"
+            "repo": "Divergenti-Core"
         }
     ],
     "releaseInfo": {
@@ -25,7 +25,7 @@
         "target": [
             "nsis"
         ],
-        "artifactName": "Rutanio.Core-${version}-${os}-${env.arch}.${ext}"
+        "artifactName": "Divergenti.Core-${version}-${os}-${env.arch}.${ext}"
     },
     "linux": {
         "icon": "dist/assets/images/",
@@ -62,7 +62,7 @@
         "perMachine": true,
         "allowToChangeInstallationDirectory": true,
         "deleteAppDataOnUninstall": true,
-        "guid": "693636e4-aa8c-4a2f-87cc-acb76f324caf",
+        "guid": "9a5fa62c-911a-4339-9ce1-8ad176a15fd5",
         "createDesktopShortcut": true,
         "createStartMenuShortcut": true,
         "license": "dist/assets/license.txt"
@@ -72,7 +72,7 @@
     },
     "extraResources": [
         "daemon/**/*",
-        "dist/assets/ruta/icon-tray.ico",
+        "dist/assets/diver/icon-tray.ico",
         "dist/assets/license.txt"
     ]
 }

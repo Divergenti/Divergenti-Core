@@ -1,21 +1,21 @@
 {
-    "name": "rutaniocore",
-    "version": "1.0.4",
+    "name": "divergenticore",
+    "version": "1.0.1",
     "license": "MIT",
     "author": {
         "name": "FluidChains Inc",
         "email": "contact@fluidchains.com",
         "url": "https://www.fluidchains.com"
     },
-    "description": "Rutanio Core.",
+    "description": "Divegenti Core.",
     "repository": {
         "type": "git",
-        "url": "https://github.com/FluidChains/Rutanio-Core.git"
+        "url": "https://github.com/FluidChains/Divergenti-Core.git"
     },
     "bugs": {
-        "url": "https://github.com/rutanio/Rutanio-Core/issues"
+        "url": "https://github.com/FluidChains/Divergenti-Core/issues"
     },
-    "homepage": "https://github.com/rutanio/Rutanio-Core#readme",
+    "homepage": "https://github.com/FluidChains/Divergenti-Core#readme",
     "main": "main.js",
     "scripts": {
         "postinstall": "npm run postinstall:electron && npx electron-builder install-app-deps",
@@ -133,7 +133,7 @@
         "protractor": "~7.0.0",
         "replace": "1.2.0",
         "roboto-fontface": "0.10.0",
-        "ruta-coininfo": "file:/./contrib/ruta-coininfo-5.1.0.tgz",
+        "diver-coininfo": "file:/./contrib/diver-coininfo-5.1.0.tgz",
         "rxjs": "6.6.2",
         "ts-node": "8.10.2",
         "tslint": "~6.1.3",

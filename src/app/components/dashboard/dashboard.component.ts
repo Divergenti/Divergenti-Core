@@ -133,8 +133,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
             maxSupply: '0',
             price: coin.last,
             volume24Hr: coin.volume,
-            symbol: 'RUTA',
-            name: 'Rutanio',
+            symbol: 'DIVER',
+            name: 'Divergenti',
             pair: coin.pair,
             volumepair: coin.volumepair
         };

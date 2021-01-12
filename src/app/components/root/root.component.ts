@@ -101,7 +101,7 @@ export class RootComponent implements OnInit, OnDestroy {
                 this.appState.shutdownInProgress = true;
                 this.cd.detectChanges();
 
-                // If the exit takes a very long time, we want to allow users to forcefully exit Rutanio Core.
+                // If the exit takes a very long time, we want to allow users to forcefully exit Divergenti Core.
                 setTimeout(() => {
                     this.appState.shutdownDelayed = true;
                     this.cd.detectChanges();
@@ -124,7 +124,7 @@ export class RootComponent implements OnInit, OnDestroy {
 
                 const dialogRef = this.dialog.open(ReportComponent, {
                     data: {
-                        title: 'Failed to start Rutanio Node background daemon',
+                        title: 'Failed to start Divergenti Node background daemon',
                         error,
                         lines: this.log.lastEntries()
                     }
@@ -193,7 +193,7 @@ export class RootComponent implements OnInit, OnDestroy {
             const networkWeight = ((this.walletService.netStakingWeight / 100000000).toLocaleString('en-US', { maximumFractionDigits: 2 }));
             const percertNetwork = ((this.walletService.stakingWeight / this.walletService.netStakingWeight) * 100).toLocaleString('en-US', { maximumFractionDigits: 2 });
 
-            return `Staking: Enable \nWeight: ${walletHeight} RUTAs \nNetwork weight: ${networkWeight} RUTAs \n% Network: ${percertNetwork}% \nExpected reward time: ${this.walletService.dateTime} `;
+            return `Staking: Enable \nWeight: ${walletHeight} DIVERs \nNetwork weight: ${networkWeight} DIVERs \n% Network: ${percertNetwork}% \nExpected reward time: ${this.walletService.dateTime} `;
         }
     }
 

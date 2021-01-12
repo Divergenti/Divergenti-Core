@@ -1,7 +1,33 @@
 <div class="login-container not-selectable">
-    <div class="login-content">
 
+    <div class="login-banner">
+        <div class="login-banner-content">
+            <img src="assets/city-hub/city-hub-dark.png" class="login-logo">
+            <br>
+            <br>
+            <img src="assets/city-hub/elcaminodigital.png" class="login-logotype">
+            <br>
+            <p class="login-banner-text">Release {{appState.release}}<br>
+                Network: Divergenti Main<br>
+                Mode: {{appState.mode}}<br>
+                <span *ngIf="status">
+                    Connections: {{status?.inboundPeers.length + status?.outboundPeers.length}}
+                </span>
+            </p>
+            <br>
+            <a>All rights reserved</a>
+        </div>
+        <div class="login-mode-mobile">
+            <!--<button mat-button (click)="changeMode()">Change mode </button>--> &nbsp; <button mat-button routerLink="/advanced">Advanced</button>
+        </div>
+    </div>
+
+    <div class="login-content">
+        <img src="assets/city-hub/esperando.png" class="login-welcome">
+            <br>
+            <br>
         <div class="login-accounts" *ngIf="hasWallet">
+
             <mat-form-field>
                 <mat-select placeholder="Select wallet" [(ngModel)]="selectedAccount">
                     <mat-option *ngFor="let account of accounts" [value]="account">
@@ -19,7 +45,7 @@
                     <!-- <mat-hint>This is your personal password, not the 12-word phrase. Make sure you use a password you can remember, nobody else have your password and nobody can help you recover it.</mat-hint> -->
                 </mat-form-field>
                 <br>
-                <button class="login-unlock-button" (click)="unlock()" [disabled]="unlocking" mat-raised-button color="primary">Unlock</button>&nbsp;
+                <button style="color:black"  class="login-unlock-button" (click)="unlock()" [disabled]="unlocking" mat-raised-button color="primary">Unlock</button>&nbsp;
                 <button class="login-cancel-button" (click)="cancel()" mat-raised-button>Create</button>
                 <br>
                 <!-- <mat-progress-bar *ngIf="unlocking && appState.isSimpleMode" mode="determinate" [value]="unlockPercentage"></mat-progress-bar>
@@ -45,24 +71,7 @@
         </div>
 
         <div class="login-mode">
-            <!--<button mat-button (click)="changeMode()">Change mode </button>--> &nbsp; <button mat-button routerLink="/advanced">Advanced</button>
-        </div>
-    </div>
-    <div class="login-banner">
-        <div class="login-banner-content">
-            <img src="assets/{{appState.chain}}/logo-full-light.png" class="login-logo">
-            <br>
-            <br>
-            <p class="login-banner-text">Release {{appState.release}}<br>
-                Network: {{appState.network}}<br>
-                Mode: {{appState.mode}}<br>
-                <span *ngIf="status">
-                    Connections: {{status?.inboundPeers.length + status?.outboundPeers.length}}
-                </span>
-            </p>
-        </div>
-        <div class="login-mode-mobile">
-            <!--<button mat-button (click)="changeMode()">Change mode </button>--> &nbsp; <button mat-button routerLink="/advanced">Advanced</button>
+            <!--<button mat-button (click)="changeMode()">Change mode </button>--> &nbsp; <button style="color:black" mat-button routerLink="/advanced">Advanced</button>
         </div>
     </div>
 </div>

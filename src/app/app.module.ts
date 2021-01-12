@@ -81,7 +81,7 @@ import { HubService } from './services/hub.service';
         // ChainService,
         ElectronService,
         // GlobalService,
-        { provide: APP_TITLE, useValue: 'Rutanio Core' },
+        { provide: APP_TITLE, useValue: 'Divergenti Core' },
     ],
     bootstrap: [RootComponent]
 })

@@ -9,6 +9,7 @@
         width: 100%;
         display: flex;
         flex-direction: row;
+        background-color: #8282e9;
     }
 
     .login-content
@@ -21,6 +22,9 @@
         align-items: stretch;
         min-height: 260px;
         margin-top: 10%;
+        background-image: url('../../../assets/city/splash-image.png');
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .login-unlock-button {
@@ -33,7 +37,19 @@
 
     .login-logo
     {
-        width: 100%;
+        width: 42%;
+
+    }
+
+    .login-logotype
+    {
+        width: 85%;
+    }
+
+    .login-welcome
+    {
+        width: 35%;
+        align-self: center;
     }
 
     .login-header{
@@ -64,12 +80,10 @@
 
     .login-banner
     {
-        background-color: #280d2d;
+        background-color: black;
         width: 56%;
-        background-image: url('../../../assets/city/splash-image.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        text-align: center;
+        text-align: left;
+
     }
 
     .login-banner-content
@@ -80,7 +94,7 @@
     .login-banner-text
     {
         padding-top: 30px;
-        text-align: right;
+        text-align: left;
     }
 
     .login-mode-mobile {

@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 import { NodeStatus } from '@models/node-status';
 import { ElectronService } from 'ngx-electron';
 import { environment } from 'src/environments/environment';
-import * as coininfo from 'ruta-coininfo';
+import * as coininfo from 'diver-coininfo';
 
 export interface ListItem {
     name: string;
@@ -71,7 +71,7 @@ export class LoadComponent implements OnDestroy {
 
         this.networks = [
             // { id: 'main', name: 'Main' },
-            { id: 'rutaniomain', name: 'Rutanio Main' },
+            { id: 'divergentimain', name: 'Divergenti Main' },
             // { id: 'citytest', name: 'City Chain (Test)' },
             // { id: 'stratistest', name: 'Stratis (Test)' },
             // { id: 'stratismain', name: 'Stratis' },
@@ -100,7 +100,7 @@ export class LoadComponent implements OnDestroy {
 
         // TODO: Should send the correct network, hard-coded to city main for now.
         // Do this always now, we need this information in the UI for identity handling.
-        const network = coininfo('ruta').toBitcoinJS();
+        const network = coininfo('diver').toBitcoinJS();
         this.appState.networkDefinition = network;
 
         this.appState.networkParams = {
