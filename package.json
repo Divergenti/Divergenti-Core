@@ -1,13 +1,13 @@
 {
     "name": "divergenticore",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "license": "MIT",
     "author": {
         "name": "FluidChains Inc",
         "email": "contact@fluidchains.com",
         "url": "https://www.fluidchains.com"
     },
-    "description": "Divegenti Core.",
+    "description": "Divergenti Core.",
     "repository": {
         "type": "git",
         "url": "https://github.com/FluidChains/Divergenti-Core.git"
