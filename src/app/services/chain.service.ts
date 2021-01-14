@@ -30,7 +30,7 @@ export class ChainService {
         if (!ChainService.singletonInstance) {
 
             this.availableChains = [
-                { name: 'Divergenti', identity: 'diver', tooltip: 'Divergenti Core', port: 3452, rpcPort: 3451, apiPort: 39320, wsPort: 39320, network: 'divergentimain', genesisDate: new Date(2020, 12, 21) },
+                { name: 'Divergenti', identity: 'diver', tooltip: 'Divergenti Core', port: 3452, rpcPort: 3451, apiPort: 39320, wsPort: 39320, network: 'divergentimain', genesisDate: new Date(2020, 11, 21 )},
                 { name: 'Divergenti Node (RegTest)', identity: 'diver', tooltip: 'Divergenti Node', port: 14333, rpcPort: 14334, apiPort: 14335, wsPort: 14336, network: 'cityregtest', genesisDate: new Date(2018, 9, 1) },
                 { name: 'Divergenti Node (Test)', identity: 'diver', tooltip: 'Divergenti Node', port: 24333, rpcPort: 24334, apiPort: 24335, wsPort: 24336, network: 'citytest', genesisDate: new Date(2018, 9, 1) },
 
@@ -61,6 +61,8 @@ export class ChainService {
         } else {
             selectedChain = selectedChains[0];
         }
+
+        this.log.info('Genesis*: ', selectedChain);
 
         return selectedChain;
     }

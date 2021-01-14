@@ -220,7 +220,7 @@ function createWindow() {
         frame: true,
         minWidth: 260,
         minHeight: 400,
-        title: 'Divegenti Core',
+        title: 'Divergenti Core',
         webPreferences: { webSecurity: false, nodeIntegration: true }
     });
     contents = mainWindow.webContents;
@@ -371,7 +371,7 @@ function getDaemonPath() {
         apiPath = path.resolve(__dirname, '..//..//resources//daemon//');
     }
     else {
-        apiPath = path.resolve(__dirname, '..//..//resources//daemon//bin//publish');
+        apiPath = path.resolve(__dirname, '..//..//resources//daemon//');
     }
     return apiPath;
 }
@@ -468,35 +468,33 @@ function shutdownDaemon(callback) {
         callback(true, null);
         return;
     }
-    if (process.platform !== 'darwin') {
-        writeLog('Sending POST request to shut down daemon.');
-        var http = require('http');
-        var options = {
-            hostname: 'localhost',
-            port: currentChain.apiPort,
-            body: 'true',
-            path: '/api/node/shutdown',
-            method: 'POST'
-        };
-        var req = http.request(options);
-        req.on('response', function (res) {
-            if (res.statusCode === 200) {
-                writeLog('Request to shutdown daemon returned HTTP success code.');
-                callback(true, null);
-            }
-            else {
-                writeError('Request to shutdown daemon returned HTTP failure code: ' + res.statusCode);
-                callback(false, res);
-            }
-        });
-        req.on('error', function (err) {
-            writeError('Request to shutdown daemon failed.');
-            callback(false, err);
-        });
-        req.setHeader('content-type', 'application/json-patch+json');
-        req.write('true');
-        req.end();
-    }
+    writeLog('Sending POST request to shut down daemon.');
+    var http = require('http');
+    var options = {
+        hostname: 'localhost',
+        port: currentChain.apiPort,
+        body: 'true',
+        path: '/api/node/shutdown',
+        method: 'POST'
+    };
+    var req = http.request(options);
+    req.on('response', function (res) {
+        if (res.statusCode === 200) {
+            writeLog('Request to shutdown daemon returned HTTP success code.');
+            callback(true, null);
+        }
+        else {
+            writeError('Request to shutdown daemon returned HTTP failure code: ' + res.statusCode);
+            callback(false, res);
+        }
+    });
+    req.on('error', function (err) {
+        writeError('Request to shutdown daemon failed.');
+        callback(false, err);
+    });
+    req.setHeader('content-type', 'application/json-patch+json');
+    req.write('true');
+    req.end();
 }
 function createTray() {
     // Put the app in system tray

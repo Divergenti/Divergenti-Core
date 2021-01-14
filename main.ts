@@ -285,7 +285,7 @@ function createWindow() {
         frame: true,
         minWidth: 260,
         minHeight: 400,
-        title: 'Divegenti Core',
+        title: 'Divergenti Core',
         webPreferences: { webSecurity: false, nodeIntegration: true }
     });
 
