@@ -457,7 +457,7 @@ function getDaemonPath() {
     } else if (os.platform() === 'linux') {
         apiPath = path.resolve(__dirname, '..//..//resources//daemon//');
     } else {
-        apiPath = path.resolve(__dirname, '..//..//resources//daemon//bin//publish');
+        apiPath = path.resolve(__dirname, '..//..//resources//daemon//');
     }
 
     return apiPath;
@@ -581,6 +581,7 @@ function shutdownDaemon(callback) {
         const options = {
             hostname: 'localhost',
             port: currentChain.apiPort,
+            body: 'true',
             path: '/api/node/shutdown',
             method: 'POST'
         };

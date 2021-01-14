@@ -474,6 +474,7 @@ function shutdownDaemon(callback) {
         var options = {
             hostname: 'localhost',
             port: currentChain.apiPort,
+            body: 'true',
             path: '/api/node/shutdown',
             method: 'POST'
         };
