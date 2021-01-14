@@ -11,7 +11,7 @@
         }
     ],
     "releaseInfo": {
-        "releaseName": "v${version}"
+        "releaseName": "${version}"
     },
     "files": [
         "dist/**",
