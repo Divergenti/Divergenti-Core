@@ -574,7 +574,7 @@ function shutdownDaemon(callback) {
         return;
     }
 
-    if (process.platform !== 'darwin') {
+
         writeLog('Sending POST request to shut down daemon.');
 
         const http = require('http');
@@ -606,7 +606,7 @@ function shutdownDaemon(callback) {
         req.setHeader('content-type', 'application/json-patch+json');
         req.write('true');
         req.end();
-    }
+
 }
 
 function createTray() {
