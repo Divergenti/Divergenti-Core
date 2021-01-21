@@ -147,7 +147,15 @@ electron_1.ipcMain.on('reset-database', function (event, arg) {
 electron_1.ipcMain.on('open-data-folder', function (event, arg) {
     var userDataPath = electron_1.app.getPath('userData');
     var appDataFolder = path.dirname(userDataPath);
-    var dataFolder = path.join(appDataFolder, 'Blockcore', 'divergenti', arg);
+    var dataFolder = null;
+    if (os.platform() === 'win32') {
+        dataFolder = path.join(appDataFolder, 'Blockcore', 'divergenti', arg);
+        writeLog(dataFolder);
+    }
+    else {
+        dataFolder = path.join(appDataFolder, '.blockcore', 'divergenti', arg);
+        writeLog(dataFolder);
+    }
     electron_1.shell.openPath(dataFolder);
     event.returnValue = 'OK';
 });

@@ -194,9 +194,19 @@ ipcMain.on('reset-database', (event, arg: string) => {
 });
 
 ipcMain.on('open-data-folder', (event, arg: string) => {
+
     const userDataPath = app.getPath('userData');
     const appDataFolder = path.dirname(userDataPath);
-    const dataFolder = path.join(appDataFolder, 'Blockcore', 'divergenti', arg);
+
+    let dataFolder = null;
+    if (os.platform() === 'win32') {
+        dataFolder = path.join(appDataFolder, 'Blockcore', 'divergenti', arg);
+        writeLog(dataFolder);
+    } else {
+        dataFolder = path.join(appDataFolder, '.blockcore', 'divergenti', arg);
+        writeLog(dataFolder);
+    }
+
     shell.openPath(dataFolder);
 
     event.returnValue = 'OK';
