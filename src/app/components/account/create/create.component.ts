@@ -1,10 +1,11 @@
-import { Component, ViewEncapsulation, HostBinding, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { AuthenticationService } from '../../../services/authentication.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { GlobalService } from '../../../services/global.service';
 import { ApiService } from '../../../services/api.service';
 import { PasswordValidationDirective } from '../../../shared/directives/password-validation.directive';
+
 import { WalletCreation } from '../../../classes/wallet-creation';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -18,6 +19,7 @@ import * as city from 'city-lib';
 import { HDNode } from 'city-lib';
 import * as wif from 'wif';
 import Dexie from 'dexie';
+import sha256 from 'crypto-js/sha256';
 import { DatabaseStorageService } from 'src/app/services/storage.service';
 
 @Component({
@@ -29,11 +31,15 @@ import { DatabaseStorageService } from 'src/app/services/storage.service';
 export class CreateAccountComponent implements OnInit {
     @HostBinding('class.account-create') hostClass = true;
 
+    @ViewChild('stepper') stepper;
     accountPasswordForm: FormGroup;
     accountSeedForm: FormGroup;
     accountNameForm: FormGroup;
+    accountSeedValidation: FormGroup;
     icons: string[];
     mnemonic: string;
+    verifyMnemonic: string;
+    mnemonicHash: string;
     password1 = '';
     password2 = '';
     seedExtension = '';
@@ -59,6 +65,14 @@ export class CreateAccountComponent implements OnInit {
     ngOnInit() {
         this.accountSeedForm = this.fb.group({
             seedExtension: ['', { updateOn: 'blur' }]
+        });
+
+        this.accountSeedValidation = this.fb.group({
+            verifyMnemonic: ['', {
+                validators: Validators.compose([
+                   Validators.required,
+                ])
+            }]
         });
 
         this.accountPasswordForm = this.fb.group({
@@ -108,13 +122,33 @@ export class CreateAccountComponent implements OnInit {
                 response => {
                     // if (response.status >= 200 && response.status < 400) {
                     this.mnemonic = response;
-                    this.verification = this.mnemonic.split(' ')[2];
+                  //  this.mnemonicHash = this.mnemonic.split(' ')[2];
+
                     // }
                 },
                 error => {
                     this.apiService.handleException(error);
                 }
             );
+    }
+
+    public validateSeed() {
+        const mnemonicNormalized = this.verifyMnemonic.split(' ');
+        mnemonicNormalized.forEach((currentValue, index) => {
+            currentValue.trim();
+            currentValue.replace(/^\s+|\s+$/g, '');
+
+            if (currentValue.length === 0) {
+                mnemonicNormalized.splice(index, 1);
+            }
+            currentValue.toLowerCase( );
+        });
+
+        if (sha256(mnemonicNormalized.join(' ').toString()) === sha256(this.mnemonic).toString()) {
+            this.stepper.next();
+        } else {
+            this.accountSeedValidation.get('verifyMnemonic').setErrors({ 'server-error': 'error' });
+        }
     }
 
     public createAccount() {
