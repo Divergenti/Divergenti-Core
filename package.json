@@ -1,6 +1,6 @@
 {
     "name": "divergenticore",
-    "version": "1.0.6",
+    "version": "1.0.9",
     "license": "MIT",
     "author": {
         "name": "FluidChains Inc",
@@ -62,6 +62,7 @@
         "@angular/localize": "10.1.1",
         "@angular-devkit/schematics": "^10.0.8",
         "@blockcore/message": "^1.0.0",
+        "@angular/common": "10.0.8",
         "@techiediaries/ngx-qrcode": "^9.1.0",
         "base64url": "^3.0.1",
         "bigi": "^1.2.0",
