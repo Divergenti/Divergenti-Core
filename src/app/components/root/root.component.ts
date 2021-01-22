@@ -21,8 +21,8 @@ import { retryWhen, delay, tap } from 'rxjs/operators';
 import { NodeStatus } from '@models/node-status';
 import { ReportComponent } from '../report/report.component';
 import { SettingsService } from 'src/app/services/settings.service';
-import { IdentityService } from 'src/app/services/identity.service';
-import { IdentityContainer } from '@models/identity';
+import { registerLocaleData } from '@angular/common';
+
 
 @Component({
     selector: 'app-root',
@@ -55,6 +55,8 @@ export class RootComponent implements OnInit, OnDestroy {
     menuMode = 'side';
     menuOpened = true;
 
+    locale: string;
+
     // TODO: Change into Observable.
     // get userActivated(): boolean {
     //   return this.authService.authenticated;
@@ -70,7 +72,6 @@ export class RootComponent implements OnInit, OnDestroy {
         private log: Logger,
         public updateService: UpdateService,
         public detailsService: DetailsService,
-        public identityService: IdentityService,
         public settings: SettingsService,
         private apiService: ApiService,
         private walletService: WalletService,
@@ -85,6 +86,7 @@ export class RootComponent implements OnInit, OnDestroy {
         this.loadFiller();
 
         this.isAuthenticated = authService.isAuthenticated();
+        this.getUsersLocale();
 
         if (this.electronService.ipcRenderer) {
             if (this.electronService.remote) {
@@ -197,17 +199,6 @@ export class RootComponent implements OnInit, OnDestroy {
         }
     }
 
-
-    get identityTooltip(): string {
-        if (this.identityService.identity) {
-            const name = this.identityService.identity.content.name || this.identityService.identity.content.identifier;
-            const alias = this.identityService.identity.content.alias ? ' (@' + this.identityService.identity.content.alias + ')' : '';
-            const title = this.identityService.identity.content.title ? '\n' + this.identityService.identity.content.title : '';
-
-            return `${name}${alias}\nID: ${this.identityService.identity.content.identifier}${title}`;
-        }
-    }
-
     get networkStatusTooltip(): string {
         if (this.walletService.generalInfo) {
             return `Connections: ${this.walletService.generalInfo.connectedNodes}\nBlock Height: ${this.walletService.generalInfo.chainTip}\nSynced: ${this.walletService.percentSynced}`;
@@ -263,13 +254,7 @@ export class RootComponent implements OnInit, OnDestroy {
         window.close();
     }
 
-    selectIdentity(identity: IdentityContainer) {
-        this.identityService.identity = identity;
-    }
-
     ngOnInit() {
-
-        // this.tryStart();
 
         setTimeout(() => {
             // We'll check for updates in the startup of the app.
@@ -279,6 +264,39 @@ export class RootComponent implements OnInit, OnDestroy {
         if (this.router.url !== '/load') {
             this.router.navigateByUrl('/load');
         }
+    }
+
+    private registerLocale(locale: string) {
+        if (!locale) {
+            return;
+        }
+        locale = this.globalService.getLocale();
+        let localeId = locale;
+
+        if (localeId === 'en-US') {
+            localeId = 'en';
+        }
+        this.localeInitializer(localeId).then(() => {
+        });
+    }
+
+    localeInitializer(localeId: string): Promise<any> {
+        return import(
+            `@angular/common/locales/${localeId}.js`
+        ).then(module => registerLocaleData(module.default));
+    }
+
+    getUsersLocale() {
+        const defaultValue = this.globalService.getLocale();
+        if (typeof window === 'undefined' || typeof window.navigator === 'undefined') {
+            return defaultValue;
+        }
+        const wn = window.navigator as any;
+        let lang = wn.languages ? wn.languages[0] : defaultValue;
+        lang = lang || wn.language || wn.browserLanguage || wn.userLanguage;
+        this.globalService.setlocale(lang);
+        this.registerLocale(lang);
+        this.locale = lang;
     }
 
     private updateNetworkInfo() {
