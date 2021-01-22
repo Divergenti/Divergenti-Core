@@ -16,13 +16,7 @@ import { PaperWalletComponent } from './components/paperwallet/paperwallet.compo
 import { ToolsComponent } from './components/tools/tools.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { NetworkDetailsComponent } from './components/network/network-details.component';
-import { IdentityComponent } from './components/identity/identity.component';
-import { IdentityViewComponent } from './components/identity/identity-view.component';
 import { HubDetailsComponent } from './components/settings/hub-details.component';
-import { IdentityEditComponent } from './components/identity/identity-edit.component';
-import { IdentityLookupComponent } from './components/identity/identity-lookup.component';
-import { IdentityUnlockComponent } from './components/identity/identity-unlock.component';
-import { IdentityExportComponent } from './components/identity/identity-export.component';
 
 const routes: Routes = [
     {
@@ -67,59 +61,6 @@ const routes: Routes = [
         data: {
             title: 'Paperwallet'
         }
-    },
-    {
-        path: 'identity',
-        component: IdentityComponent,
-        canActivate: [AuthenticatedUserGuard],
-        data: {
-            title: 'Identity'
-        },
-    },
-    {
-        path: 'identity/:id',
-        component: IdentityViewComponent,
-        canActivate: [AuthenticatedUserGuard],
-        data: {
-            title: 'Identity',
-            prefix: 'View'
-        },
-    },
-    {
-        path: 'identity/:id/edit',
-        component: IdentityEditComponent,
-        canActivate: [AuthenticatedUserGuard],
-        data: {
-            title: 'Identity',
-            prefix: 'Edit'
-        },
-    },
-    {
-        path: 'identity/:id/unlock',
-        component: IdentityUnlockComponent,
-        canActivate: [AuthenticatedUserGuard],
-        data: {
-            title: 'Identity',
-            prefix: 'Unlock'
-        },
-    },
-    {
-        path: 'identity/:id/export',
-        component: IdentityExportComponent,
-        canActivate: [AuthenticatedUserGuard],
-        data: {
-            title: 'Identity',
-            prefix: 'Export'
-        },
-    },
-    {
-        path: 'identity/:id/search',
-        component: IdentityLookupComponent,
-        canActivate: [AuthenticatedUserGuard],
-        data: {
-            title: 'Identity',
-            prefix: 'Lookup'
-        },
     },
     {
         path: 'merchants',

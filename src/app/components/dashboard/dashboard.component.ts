@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         private apiService: ApiService,
       //  private coincap: CoincapService,
         private coin: CoinService,
-        private globalService: GlobalService,
+        public globalService: GlobalService,
         public appState: ApplicationStateService,
         public notifications: NotificationService,
         private detailsService: DetailsService,
@@ -58,7 +58,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
         } else if (this.selectedCoinTickerIndex >= this.coins.length) {
             this.selectedCoinTickerIndex = 0;
         }
-
         this.selectedCoinTicker = this.coins[this.selectedCoinTickerIndex];
     }
 

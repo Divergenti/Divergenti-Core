@@ -13,7 +13,6 @@ import { ElectronService } from 'ngx-electron';
 import { DatabaseStorageService, StorageService } from 'src/app/services/storage.service';
 import * as bip38 from '../../../libs/bip38';
 import { Logger } from 'src/app/services/logger.service';
-import { IdentityService } from 'src/app/services/identity.service';
 
 export interface Account {
     name: string;
@@ -47,7 +46,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         private walletService: WalletService,
         private router: Router,
         private globalService: GlobalService,
-        private identityService: IdentityService,
         private wallet: WalletService,
         private storageService: StorageService,
         private electronService: ElectronService,
@@ -299,7 +297,6 @@ export class LoginComponent implements OnInit, OnDestroy {
                     // Get the physical path to the wallet file.
                     const fullPath = this.globalService.getWalletFullPath();
 
-                    this.identityService.unlock(fullPath, walletLoad.password);
 
                     this.router.navigateByUrl('/dashboard');
                     // }

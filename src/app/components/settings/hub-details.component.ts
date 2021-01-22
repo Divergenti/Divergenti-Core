@@ -10,7 +10,6 @@ import { HubAddComponent } from './hub-add.component';
 import { SettingsService } from 'src/app/services/settings.service';
 import { HubService } from 'src/app/services/hub.service';
 import { Hub, HubContainer } from '@models/hub';
-import { IdentityService } from 'src/app/services/identity.service';
 
 @Component({
     selector: 'app-hub-details',
@@ -46,7 +45,6 @@ export class HubDetailsComponent implements OnInit, OnDestroy {
         private chains: ChainService,
         public settings: SettingsService,
         public hubService: HubService,
-        public identityService: IdentityService,
         public router: Router,
         public dialog: MatDialog,
         public walletService: WalletService) {

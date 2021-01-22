@@ -149,11 +149,6 @@
                 <mat-icon>cloud_off</mat-icon>
             </button>
 
-            <button *ngIf="appModes.enabled('identity')" mat-icon-button [matTooltip]="identityTooltip" [matMenuTriggerFor]="identityMenu">
-                <mat-icon *ngIf="!identityService.identity">person</mat-icon>
-                <img *ngIf="identityService.identity" class="mat-icon notranslate material-icons mat-icon-no-color" [src]="identityService.getImage(identityService.identity.content.image)">
-            </button>
-
             <button *ngIf="!appState.pageMode && !appState.handset" mat-icon-button [matMenuTriggerFor]="moreMenu">
                 <mat-icon>more_vert</mat-icon>
             </button>
@@ -180,15 +175,6 @@
                     <span>Log out</span>
                 </button>
             </mat-menu>
-
-            <mat-menu #identityMenu="matMenu">
-                <button mat-menu-item (click)="selectIdentity(identity)" *ngFor="let identity of identityService.identities$ | async | sortBy: 'asc':'index'">
-                    <img class="mat-icon notranslate material-icons mat-icon-no-color" [src]="identityService.getImage(identity.content.image)">
-                    <span *ngIf="identity.content.name">{{identity.content.name}}</span>
-                    <span *ngIf="!identity.content.name">{{identity.content.identifier}}</span>
-                </button>
-            </mat-menu>
-
         </mat-toolbar>
 
         <app-view-area class="app-view-area-main">
