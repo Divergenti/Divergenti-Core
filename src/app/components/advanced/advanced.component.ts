@@ -46,7 +46,7 @@ export class AdvancedComponent {
     }
 
     openDataFolder() {
-        const path = this.electronService.ipcRenderer.sendSync('open-data-folder', 'divergentimain');
+        const path = this.electronService.ipcRenderer.sendSync('open-data-folder', 'DivergentiMain');
     }
 
     checkForUpdate() {

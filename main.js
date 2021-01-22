@@ -145,15 +145,14 @@ electron_1.ipcMain.on('reset-database', function (event, arg) {
     event.returnValue = 'OK';
 });
 electron_1.ipcMain.on('open-data-folder', function (event, arg) {
-    var userDataPath = electron_1.app.getPath('userData');
-    var appDataFolder = path.dirname(userDataPath);
+    var userDataPath = getAppDataPath();
     var dataFolder = null;
     if (os.platform() === 'win32') {
-        dataFolder = path.join(appDataFolder, 'Blockcore', 'divergenti', arg);
+        dataFolder = path.join(userDataPath, 'Blockcore', 'divergenti', arg);
         writeLog(dataFolder);
     }
     else {
-        dataFolder = path.join(appDataFolder, '.blockcore', 'divergenti', arg);
+        dataFolder = path.join(userDataPath, '.blockcore', 'divergenti', arg);
         writeLog(dataFolder);
     }
     electron_1.shell.openPath(dataFolder);
@@ -220,10 +219,36 @@ function deleteFolderRecursive(folder) {
         fs.rmdirSync(folder);
     }
 }
+function getAppDataPath() {
+    switch (process.platform) {
+        case 'darwin': {
+            return path.join(process.env.HOME);
+        }
+        case "win32": {
+            return path.join(process.env.APPDATA);
+        }
+        case "linux": {
+            writeLog(path.join(process.env.HOME).toString());
+            return path.join(process.env.HOME);
+        }
+        default: {
+            console.log("Unsupported platform!");
+            process.exit(1);
+        }
+    }
+}
 function createWindow() {
     // Create the browser window.
+    var iconpath;
+    if (serve) {
+        iconpath = electron_1.nativeImage.createFromPath('./src/assets/' + coin.identity + '/logo-icon.png');
+    }
+    else {
+        iconpath = electron_1.nativeImage.createFromPath(path.resolve(__dirname, '..//..//resources//dist//assets//' + coin.identity + '//logo-icon.png'));
+    }
     mainWindow = new electron_1.BrowserWindow({
         width: 1150,
+        icon: iconpath,
         height: 800,
         frame: true,
         minWidth: 260,
@@ -515,12 +540,6 @@ function createTray() {
     }
     var systemTray = new electron_1.Tray(trayIcon);
     var contextMenu = electron_1.Menu.buildFromTemplate([
-        {
-            label: 'Hide/Show',
-            click: function () {
-                mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show();
-            }
-        },
         {
             label: 'Exit',
             click: function () {

@@ -195,15 +195,14 @@ ipcMain.on('reset-database', (event, arg: string) => {
 
 ipcMain.on('open-data-folder', (event, arg: string) => {
 
-    const userDataPath = app.getPath('userData');
-    const appDataFolder = path.dirname(userDataPath);
+    let userDataPath = getAppDataPath();
 
     let dataFolder = null;
     if (os.platform() === 'win32') {
-        dataFolder = path.join(appDataFolder, 'Blockcore', 'divergenti', arg);
+        dataFolder = path.join(userDataPath, 'Blockcore', 'divergenti', arg);
         writeLog(dataFolder);
     } else {
-        dataFolder = path.join(appDataFolder, '.blockcore', 'divergenti', arg);
+        dataFolder = path.join(userDataPath, '.blockcore', 'divergenti', arg);
         writeLog(dataFolder);
     }
 
@@ -287,10 +286,38 @@ function deleteFolderRecursive(folder) {
     }
 }
 
+function getAppDataPath() {
+    switch (process.platform) {
+        case 'darwin': {
+            return path.join(process.env.HOME);
+        }
+        case "win32": {
+            return path.join(process.env.APPDATA);
+        }
+        case "linux": {
+            writeLog(path.join(process.env.HOME).toString());
+            return path.join(process.env.HOME);
+            
+            
+        }
+        default: {
+            console.log("Unsupported platform!");
+            process.exit(1);
+        }
+    }
+}
+
 function createWindow() {
     // Create the browser window.
+    let iconpath;
+    if (serve) {
+        iconpath = nativeImage.createFromPath('./src/assets/' + coin.identity + '/logo-icon.png');
+    } else {
+        iconpath = nativeImage.createFromPath(path.resolve(__dirname, '..//..//resources//dist//assets//' + coin.identity +'//logo-icon.png'));
+    }
     mainWindow = new BrowserWindow({
         width: 1150,
+        icon: iconpath,
         height: 800,
         frame: true,
         minWidth: 260,
@@ -631,12 +658,6 @@ function createTray() {
     const systemTray = new Tray(trayIcon);
 
     const contextMenu = Menu.buildFromTemplate([
-        {
-            label: 'Hide/Show',
-            click: () => {
-                mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show();
-            }
-        },
         {
             label: 'Exit',
             click: () => {
