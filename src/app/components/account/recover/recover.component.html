@@ -78,8 +78,9 @@
             </p>
         </mat-card>
 
-        <button type="button" color="primary" (click)="restoreAccount()" mat-raised-button [disabled]="saving || form.invalid">Restore account</button>
-        <button mat-raised-button routerLink="/login" type="button">Cancel</button>
+        <button class="cancel-button" mat-raised-button routerLink="/login" type="button">CANCEL</button>
+        <button class="unlock-button" type="button" color="primary" (click)="restoreAccount()" mat-raised-button [disabled]="saving || form.invalid">RESTORE ACCOUNT</button>
+
         <div class="spinner-container" *ngIf="saving">
             <mat-spinner [diameter]="24"></mat-spinner>
         </div>

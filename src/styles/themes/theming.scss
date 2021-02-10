@@ -6,7 +6,7 @@
   @include angular-material-theme($theme);
 
   .mat-menu-panel {
-    background-color: map-get($background, "dialog");
+    background-color: #8282e9 !important;
   }
 
   ::selection {
@@ -17,10 +17,22 @@
     background: $app-selection-color;
   }
 
+  .unlock-button {
+    background: #61ffd6;
+    color: black !important;
+   }
+
+  .cancel-button {
+    margin-right: 10px;
+    background: black;
+    color: white;
+   }
+
   .mat-tab-link,
   .mat-tab-label {
     font-weight: 300;
     text-transform: uppercase;
+    color: black;
   }
 
   .mat-tab-label-active {

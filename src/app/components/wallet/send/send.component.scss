@@ -1,16 +1,43 @@
 .send {
 
+    .balance {
+        color: #8282e9;
+        font-size: 30px !important;
+
+    }
+
+
+    .mat-form-field-label {
+        /*change color of label*/
+        color: black !important;
+    }
+
+    .mat-form-field-outline {
+        color: black !important;
+    }
+
+    .available {
+        background: white !important;
+        color: black;
+    }
+
     .spinner-container {
 		vertical-align: middle;
 		display: inline-block;
     }
-    
+
     .mat-form-field {
         width: 100%;
         max-width: 400px;
     }
 
-    mat-card {
+    .dashboard-card-balance {
+        min-height: 150px;
+        background: white !important;
+    }
+
+
+    .mat-card {
         margin-bottom: 20px;
     }
 }

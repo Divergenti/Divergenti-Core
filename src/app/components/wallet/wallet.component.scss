@@ -2,9 +2,39 @@
 
 .wallet
 {
+
+    .mat-table {
+        background-color: white !important;
+        color: black !important;
+    }
+
+    .mat-cell {
+        color: black;
+    }
+
+    .mat-tab-nav-bar {
+        background-color: white !important;
+        color: black !important;
+    }
+
+    color: black !important;
+
     div[fxLayoutAlign] { padding:10px; padding-left: 25px; padding-top:15px;}
 
-    .dashboard-card {
+    .dashboard-card-balance {
+        min-height: 150px;
+        background: #8282e9 !important;
+    }
+
+    .mat-form-field-outline {
+        color: black !important;
+    }
+
+    .cancel-button {
+        color: white !important;
+    }
+
+     .dashboard-card {
         //height: 100%;
         //margin: 20px;
         min-height: 150px;
@@ -15,19 +45,47 @@
         margin-bottom: 20px;
     }
 
-    mat-card {
-        margin-bottom: 20px;
+    .wallet-input {
+        border-color: black !important;
+        color: black !important;
     }
 
     .dashboard-split-card {
         display: flex;
         flex-direction: row;
+
+    }
+
+    .mat-expansion-panel-header-title {
+        color: black !important;
+    }
+
+    .mat-form-field-label {
+        /*change color of label*/
+        color: black !important;
+    }
+
+    .internal-cards {
+        background: white !important;
+        color: black;
+    }
+
+    .mat-expansion-panel {
+        background: white;
+        color: black !important;
+    }
+
+    .mat-panel-description {
+        color: black !important;
     }
 
     .dashboard-split-left {
         flex-grow: 2;
         min-width: 230px;
         width: 65%;
+        background: white;
+        color: black !important;
+
     }
 
     .dashboard-split-right {
@@ -99,7 +157,7 @@
     .wallet-confirmed-icon {
         font-size: 14px;
     }
-      
+
     .wallet-split-card {
         display: flex;
         flex-direction: row;

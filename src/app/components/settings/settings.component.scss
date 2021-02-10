@@ -4,6 +4,8 @@
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
+    background-color: #8282e9;
+    color: black !important;
   }
 
   .settings-card .mat-card-avatar {
@@ -12,6 +14,16 @@
     height: 40px;
     margin-right: 12px;
   }
+
+
+  .mat-form-field-label {
+    /*change color of label*/
+    color: black !important;
+    }
+
+    .mat-form-field-infix {
+        color: black !important;
+    }
 
   .settings-card h3 {
     margin-bottom: 10px;
@@ -36,6 +48,6 @@
 
   .settings-row > :nth-child(2)
   {
-    
+
   }
 }

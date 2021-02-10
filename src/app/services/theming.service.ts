@@ -69,8 +69,8 @@ export class Theming {
 
     toggle() {
         if (this.currentTheme === Theme.Dark) {
-            this.log.verbose('Toggle theme to "Light" theme.');
-            this.light();
+            this.log.verbose('Toggle theme to "Dark" theme.');
+            this.dark();
         } else {
             this.log.verbose('Toggle theme to "Dark" theme.');
             this.dark();

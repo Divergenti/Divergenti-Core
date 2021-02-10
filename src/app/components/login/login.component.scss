@@ -1,7 +1,24 @@
+.unlock-button {
+    margin-bottom: 20px;
+    background: #61ffd6;
+    color: black !important;
+}
+
+.cancel-button {
+    margin-right: 10px;
+    background: black;
+    color: white;
+}
 .login
 {
+
     height: 100%;
     width: 100%;
+
+    .mat-form-field-label {
+        /*change color of label*/
+        color: black !important;
+    }
 
     .login-container
     {
@@ -27,17 +44,10 @@
         background-size: cover;
     }
 
-    .login-unlock-button {
-        margin-bottom: 20px;
-    }
-
-    .login-cancel-button {
-        margin-right: 10px;
-    }
-
     .login-logo
     {
-        width: 42%;
+        width: 30%;
+        margin-bottom: 60px;
 
     }
 
@@ -73,9 +83,11 @@
     {
         flex-grow: 2;
         align-items: flex-end;
+        margin-left: auto;
         justify-content: center;
         display: flex;
-        margin-bottom: 20px;
+        color: black;
+        margin-bottom: 30px;
     }
 
     .login-banner
@@ -93,7 +105,8 @@
 
     .login-banner-text
     {
-        padding-top: 30px;
+        padding-top: 80px;
+        font-size: 12px !important;
         text-align: left;
     }
 

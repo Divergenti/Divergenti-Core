@@ -1,6 +1,27 @@
 .account-create
 {
-	button
+    color: black !important;
+
+    .mat-step-header .mat-step-icon {
+        background-color:#61ffd6;
+        color: black;
+    }
+
+    .print-hidden {
+        background: #8282e9;
+    }
+
+    .create-understand {
+        color: black !important;
+    }
+
+    .mat-h1 {
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+
+    button
 	{
 		margin-right: 6px;
 	}
@@ -26,11 +47,11 @@
 		vertical-align: bottom;
 		align-content: center;
 	}
-	
+
 	.mnemonic-print {
 		color: black;
 	}
-	
+
 	.mnemonic-date {
 		font-size: 1rem;
 		color: black;

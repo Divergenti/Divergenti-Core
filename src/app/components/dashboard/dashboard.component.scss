@@ -1,6 +1,36 @@
 .dashboard {
 
-    .history
+    .cancel-button {
+        color: white !important;
+    }
+    .mat-card-content {
+        margin-top: 10px;
+        margin-left: 10px;
+        justify-content: center;
+    }
+
+    .card-logo {
+        width: 160px;
+        margin-bottom: 80px;
+        margin-left: auto !important;
+        position: relative;
+        margin-right: 30px;
+    }
+
+    .card-letter {
+        width: 45%;
+        position: absolute;
+        margin-top: 20px;
+    }
+
+    .internal-cards {
+        background: white !important;
+        color: black
+    }
+
+
+
+   .history
     {
         width: 80%;
 
@@ -17,6 +47,16 @@
         //margin: 20px;
         min-height: 150px;
         //width: 100%;
+    }
+
+    .dashboard-card-balance {
+        min-height: 150px;
+        background: #8282e9 !important;
+    }
+
+    .dashboard-card-know-us {
+        max-height: 150px;
+        background: black !important;
     }
 
     .mat-grid-tile .mat-figure
@@ -83,7 +123,7 @@
         color: red;
     }
 
-    .marketprice-larger 
+    .marketprice-larger
     {
         font-size: 1.2rem;
     }

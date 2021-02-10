@@ -195,7 +195,7 @@ export class CreateAccountComponent implements OnInit {
                     isExtPubKeyWallet: false,
                     extPubKey: xpub,
                     encryptedSeed: encryptedKeySeed,
-                    chainCode: masterNode.chainCode,
+                    chainCode: '',
                     network: 'DivergentiMain',
                     creationTime: Date.now() / 1000,
                     coinType: 596,

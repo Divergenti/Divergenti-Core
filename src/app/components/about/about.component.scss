@@ -1,18 +1,30 @@
 .about {
+    color: black !important;
+
+    .mat-card-subtitle {
+        color: black !important;
+
+    }
+
+    .mat-divider {
+        color: gray;
+    }
     .about-card {
         max-width: 600px;
         margin-bottom: 30px;
         padding-top: 20px;
         margin-left: auto;
         margin-right: auto;
+        background: white !important;
+        color: black !important;
       }
 
       a {
-          color: white;
+          color: black;
       }
 
       a:hover {
-          color: silver;
+          color: #61ffd6;
       }
 
       .about-heart {
@@ -22,35 +34,36 @@
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+        color: black !important;
       }
-    
+
     .about-card .mat-card-image:first-child
     {
         margin-top: -8px;
         margin-left: 0 !important;
         margin-right: 0 !important;
-
-        
+        color: black !important;
 
     }
-    
+
      .about-nav-title {
         flex: 1 1 auto;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
+        color: black !important;
     }
 
     .about-logo {
         margin-left: 10px;
         margin-right: 10px;
-        width: calc(100% - 20px);
+        width: calc(35% - 20px);
     }
-    
+
     .about-nav-caret {
         flex: 0 0 auto;
     }
-    
+
     .about-card .mat-stroked-button {
         margin-right: 10px;
         margin-top: 10px;

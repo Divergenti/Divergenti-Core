@@ -1,8 +1,14 @@
 .app-tools {
+    color: black !important;
 
     .code-block {
         overflow-wrap: break-word;
         display: inline-block;
         width: 100%;
+        color: black;
+      }
+
+      .resync-button {
+          background-color: #8282e9;
       }
 }

@@ -1,4 +1,26 @@
 .load {
+
+    .splash-container {
+        background-image: url('../../../assets/diver/load-background.png');
+        background-color: #8282e9 !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .mat-form-field-infix {
+        width: 300px !important;
+    }
+
+    .mat-form-field-label {
+        /*change color of label*/
+        color: black !important;
+    }
+
+    .mat-raised-button.mat-primary {
+        background-color: black !important;
+        width: 280px;
+    }
+
     .load-text
     {
         margin-top: 20px;
@@ -6,8 +28,8 @@
     }
 
     .load-logo {
-        width: 200px;
-        margin-bottom: 20px;
+        width: 160px;
+        margin-bottom: 80px;
     }
 }
 

@@ -1,4 +1,15 @@
 .network {
+    color: black !important;
+    .mat-list-item {
+        color: black !important;
+    }
+
+    .mat-subheader{
+        color: black !important;
+    }
+
+
+
     mat-grid-tile {
     }
 
@@ -10,6 +21,7 @@
 
     .card {
         margin: 0px 20px 20px 20px;
+        color: black !important;
     }
 
     .details-content
@@ -29,7 +41,7 @@
     }
 
     .network-label {
-        font-color: gray;
+        color: gray;
         padding-bottom: 10px;
     }
 

@@ -2,23 +2,17 @@
 
     <div class="login-banner">
         <div class="login-banner-content">
-            <img src="assets/city-hub/city-hub-dark.png" class="login-logo">
-            <br>
-            <br>
+            <img src="assets/diver/logo-white.png" class="login-logo">
             <img src="assets/city-hub/elcaminodigital.png" class="login-logotype">
-            <br>
             <p class="login-banner-text">Release {{appState.version}}<br>
                 Network: Divergenti Main<br>
                 Mode: {{appState.mode}}<br>
                 <span *ngIf="status">
                     Connections: {{status?.inboundPeers.length + status?.outboundPeers.length}}
                 </span>
+                <br>
+                <a>All rights reserved</a>
             </p>
-            <br>
-            <a>All rights reserved</a>
-        </div>
-        <div class="login-mode-mobile">
-            <!--<button mat-button (click)="changeMode()">Change mode </button>--> &nbsp; <button mat-button routerLink="/advanced">Advanced</button>
         </div>
     </div>
 
@@ -45,8 +39,9 @@
                     <!-- <mat-hint>This is your personal password, not the 12-word phrase. Make sure you use a password you can remember, nobody else have your password and nobody can help you recover it.</mat-hint> -->
                 </mat-form-field>
                 <br>
-                <button style="color:black"  class="login-unlock-button" (click)="unlock()" [disabled]="unlocking" mat-raised-button color="primary">Unlock</button>&nbsp;
-                <button class="login-cancel-button" (click)="cancel()" mat-raised-button>Create</button>
+                <button class="cancel-button" (click)="cancel()" mat-raised-button>CREATE</button>
+                <button class="unlock-button" (click)="unlock()" [disabled]="unlocking" mat-raised-button color="primary">UNLOCK</button>&nbsp;
+
                 <br>
                 <!-- <mat-progress-bar *ngIf="unlocking && appState.isSimpleMode" mode="determinate" [value]="unlockPercentage"></mat-progress-bar>
                 <mat-spinner *ngIf="unlocking && appState.isSimpleMode"></mat-spinner> -->
@@ -64,14 +59,16 @@
 
         <div class="login-actions" *ngIf="selectedAccount == null">
             <div>
-                <button routerLink="/account/create" mat-stroked-button>Create</button> or
-                <button routerLink="/account/recover" mat-stroked-button color="primary">Restore</button>
+                <button class="cancel-button" routerLink="/account/create" mat-stroked-button >CREATE</button> or
+                <button class="unlock-button" routerLink="/account/recover" mat-stroked-button color="primary">RESTORE</button>
                 your account
             </div>
         </div>
-
         <div class="login-mode">
-            <!--<button mat-button (click)="changeMode()">Change mode </button>--> &nbsp; <button style="color:black" mat-button routerLink="/advanced">Advanced</button>
+             <button mat-button routerLink="/advanced">
+                <mat-icon mat-list-icon>settings</mat-icon>
+                Advanced
+            </button>
         </div>
     </div>
 </div>

@@ -1,8 +1,8 @@
 <div class="content not-selectable centered" *ngIf="nodeStatusSubscription$ | async as node">
     <mat-card class="about-card">
-        <img src="assets/city-hub/city-hub-dark.png" class="about-logo" alt="Divergenti Core">
+        <img src="assets/diver/logo-black.png" class="about-logo" alt="Divergenti Core">
         <mat-card-header>
-            <mat-card-title>Release {{appState.version}}</mat-card-title>
+            <mat-card-title><b>Release {{appState.version}}</b></mat-card-title>
             <mat-card-subtitle>
                 <br><br>Network: Divergenti Main<br>
                 Mode: {{appState.mode}}<br>
@@ -58,9 +58,9 @@
                 <br>
             </p>
 
-            <a mat-stroked-button href="https://www.divergenti.cl" target="_blank">Divergenti Website</a>
-            <a mat-stroked-button href="https://github.com/divergenti" target="_blank">Source Code</a>
-            <button mat-stroked-button (click)="openFolder(node.dataDirectoryPath+'/DivergentiMain')">Open Wallet Folder</button> &nbsp;
+            <button class="cancel-button" mat-stroked-button onclick="window.open('https://www.divergenti.cl')">DIVERGENTI WEBSITE</button> &nbsp;
+            <button class="cancel-button" mat-stroked-button onclick="window.open('https://github.com/divergenti')">SOURCE CODE</button> &nbsp;
+            <button class="cancel-button" mat-stroked-button (click)="openFolder(node.dataDirectoryPath+'/DivergentiMain')">OPEN FOLDER WALLET</button> &nbsp;
 
         </mat-card-content>
 

@@ -68,6 +68,18 @@ body {
 	overflow: hidden;
 }
 
+.unlock-button {
+    margin-bottom: 20px;
+    background: #61ffd6;
+    color: black !important;
+}
+
+.cancel-button {
+    margin-right: 10px;
+    background: black !important;
+    color: white;
+}
+
 .content-container-full {
 	height: 100% !important;
 }
@@ -147,6 +159,7 @@ body {
 	height: 100%; /*allows both columns to span the full height of the browser window*/
 	display: flex;
 	flex-direction: column;
+    background: #ededed !important;
 }
 
 .main-menu .mat-list-item {
@@ -181,6 +194,7 @@ body {
 
 .mat-list {
 	padding-top: 0 !important;
+    color: black !important;
 }
 
 .main-menu-first {

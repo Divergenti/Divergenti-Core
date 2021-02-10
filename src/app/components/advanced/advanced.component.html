@@ -1,23 +1,31 @@
 <div class="splash-container not-selectable">
 
-    <div class="">
-        <img src="assets/city-hub/city-hub-dark.png" class="load-logo">
+
+
+    <div class="content">
+        <img src="assets/diver/logo-black.png" class="load-logo">
     </div>
-
-    <h2>Advanced Tools</h2>
-
+    <div class="advanced-content">
+    <p class="advance-title">Advanced Tools</p>
+    <br>
     <p class="paragraph-margin">If you have problems with Divergenti Core, we have these tools to help investigate and fix potential issues that might occur.</p>
 
     <p>
-        <button mat-stroked-button *ngIf="!appState.isSimpleMode" (click)="openDataFolder()">Open Wallet Folder</button> &nbsp;
+        <button class="cancel-button" mat-stroked-button *ngIf="!appState.isSimpleMode" (click)="openDataFolder()">OPEN FOLDER WALLET</button> &nbsp;
         <br><br>
-        <button mat-stroked-button (click)="updateService.checkForUpdate()" [disabled]="updateService.downloading">Check for Update</button> &nbsp;
-        <button mat-stroked-button *ngIf="updateService.available" [disabled]="updateService.downloading" (click)="updateService.downloadUpdate()">Download Update</button> &nbsp;
-        <button mat-stroked-button *ngIf="updateService.downloaded" (click)="updateService.installUpdate()">Install Update</button>
+        <button  class="cancel-button" mat-stroked-button (click)="updateService.checkForUpdate()" [disabled]="updateService.downloading">CHECK FOR UPDATE</button> &nbsp;
+        <button class="cancel-button" mat-stroked-button *ngIf="updateService.available" [disabled]="updateService.downloading" (click)="updateService.downloadUpdate()">Download Update</button> &nbsp;
+        <button class="cancel-button" mat-stroked-button *ngIf="updateService.downloaded" (click)="updateService.installUpdate()">Install Update</button>
+
+
     </p>
 
-    <p>
-        <button routerLink="/login" mat-raised-button color="primary">Go back</button>
-    </p>
+    <div class="advance-back">
+        <button  mat-button routerLink="/login">
+            <mat-icon mat-list-icon>arrow_back_ios</mat-icon>
+            GO BACK</button>
+    </div>
+    </div>
+
 
 </div>

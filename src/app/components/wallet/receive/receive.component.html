@@ -4,8 +4,8 @@
     <form *ngIf="!showAll">
         <div>
             <div>
-                <!-- <ngx-qrcode 
-                    [elementType]="elementType" 
+                <!-- <ngx-qrcode
+                    [elementType]="elementType"
                     [value] = "value"
                     cssClass = "aclass"
                     errorCorrectionLevel = "L">
@@ -31,17 +31,17 @@
             </div>
             <div>
                 <p class="mat-caption">
-                    When this address is used, you will receive another address. Addresses can be used multiple times. Make sure you always use a fresh 
+                    When this address is used, you will receive another address. Addresses can be used multiple times. Make sure you always use a fresh
                     address to increase your privacy.
                 </p>
             </div>
         </div>
     </form>
 
-    <button *ngIf="showAll" mat-stroked-button (click)="showOneAddress()">← Back to one address</button>
+    <button class="cancel-button" *ngIf="showAll" mat-stroked-button (click)="showOneAddress()">← Back to one address</button>
 
     <form *ngIf="showAll">
-        
+
 
         <br>
         <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
@@ -84,7 +84,7 @@
     </form>
 
     <div>
-        <button *ngIf="!showAll" mat-stroked-button (click)="showAllAddresses()">Show all addresses</button>
+        <button class="cancel-button" *ngIf="!showAll" mat-stroked-button (click)="showAllAddresses()">Show all addresses</button>
     </div>
 
 </div>

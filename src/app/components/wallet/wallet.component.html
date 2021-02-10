@@ -1,6 +1,6 @@
 <div class="content">
 
-    <mat-card>
+    <mat-card class="dashboard-card-balance">
         <mat-icon class="wallet-info-icon" [matTooltip]="walletInfo">info</mat-icon>
         <mat-card-title>Balance</mat-card-title>
         <mat-card-subtitle>The balance of: {{wallet.walletName}}</mat-card-subtitle>
@@ -27,13 +27,13 @@
             </ul>
 
             <p>
-                <button mat-stroked-button color="primary" routerLink="/wallet/send">Send</button>&nbsp;
-                <button mat-stroked-button color="primary" routerLink="/wallet/receive">Receive</button>&nbsp;
+                <button class="cancel-button" mat-stroked-button color="primary" routerLink="/wallet/send">Send</button>&nbsp;
+                <button class="unlock-button" mat-stroked-button color="primary" routerLink="/wallet/receive">Receive</button>&nbsp;
             </p>
         </mat-card-content>
     </mat-card>
 
-    <mat-card *ngIf="wallet.hasBalance && appModes.enabled('staking')" class="wallet-split-card">
+    <mat-card *ngIf="wallet.hasBalance && appModes.enabled('staking')" class="internal-cards">
 
         <div class="wallet-split-left" *ngIf="!wallet.stakingEnabled">
             <h2 class="mat-h2">Staking</h2>
@@ -44,10 +44,10 @@
                     <div class="form-group">
                         <mat-form-field appearance="outline">
                             <mat-label>Account password</mat-label>
-                            <input matInput type="password" id="inputPassword" formControlName="walletPassword" placeholder="Fill out to unlock account">
+                            <input class="wallet-input" matInput type="password" id="inputPassword" formControlName="walletPassword" placeholder="Fill out to unlock account">
                         </mat-form-field>
                         <br>
-                        <button type="button" mat-stroked-button id="flipcard" [disabled]="wallet.isStarting || !stakingForm.valid" (click)="startStaking()">Unlock</button>
+                        <button class="cancel-button" type="button" mat-stroked-button id="flipcard" [disabled]="wallet.isStarting || !stakingForm.valid" (click)="startStaking()">Unlock</button>
                     </div>
                 </form>
             </div>
@@ -75,7 +75,7 @@
             </ul>
 
             <p>
-                <button type="button" mat-stroked-button [disabled]="wallet.isStopping" (click)="stopStaking()">Stop Staking</button>
+                <button class="cancel-button" type="button" mat-stroked-button [disabled]="wallet.isStopping" (click)="stopStaking()">Stop Staking</button>
             </p>
 
             <mat-accordion>
@@ -149,7 +149,7 @@
                     <td mat-cell *matCellDef="let transaction" [ngClass]="{'unconfirmed': !transaction.transactionConfirmedInBlock}">
 
                         <span *ngIf="transaction.transactionType == 'sent'">
-                            <strong>- {{ transaction.transactionAmount + transaction.transactionFee | coinNotation | number: '1.0-8': this.globalService.locale 
+                            <strong>- {{ transaction.transactionAmount + transaction.transactionFee | coinNotation | number: '1.0-8': this.globalService.locale
                                 }}
                             </strong>
                         </span>

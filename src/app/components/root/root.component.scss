@@ -1,3 +1,22 @@
+.toolbar {
+    color: black !important;
+}
+
+.mat-drawer {
+    background: black !important;
+}
+
+.mat-tooltip {
+    /* your own custom styles here */
+    /* e.g. */
+    background-color: #8282e9 !important;
+}
+
+  .mat-card {
+    border: 55px !important;
+    border-radius: 30px !important;
+   }
+
 .root {
   .daemon-shutdown-status {
     z-index: 10000;
@@ -7,6 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #8282e9;
   }
 
   .daemon-shutdown-content {
@@ -45,11 +65,17 @@
       height: 32px;
   }
 
+  .mat-toolbar {
+      background-color: #ededed !important;
+  }
+
+
   .menu-top-text {
     margin-left: 20px;
     height: 32px;
     display: inline-block;
     line-height: 32px;
     font-size: 20px;
+    color: white ;
 }
 }
