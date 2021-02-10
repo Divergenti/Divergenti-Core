@@ -74,7 +74,7 @@
         "daemon/**/*",
         "dist/assets/diver/icon-tray.ico",
         "dist/assets/diver/logo-icon.png",
-        "dist/assets/diver/*",
+        "dist/assets/diver/**",
         "dist/assets/license.txt"
     ]
 }
