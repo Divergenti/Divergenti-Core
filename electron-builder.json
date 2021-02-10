@@ -74,13 +74,6 @@
         "daemon/**/*",
         "dist/assets/diver/icon-tray.ico",
         "dist/assets/diver/logo-icon.png",
-        "dist/assets/diver/analiza.png",
-        "dist/assets/diver/diver-frase.png",
-        "dist/assets/diver/load-background.png",
-        "dist/assets/diver/analiza.png",
-        "dist/assets/diver/logo-black.png",
-        "dist/assets/diver/logo-w.png",
-        "dist/assets/diver/logo-white.png",
         "dist/assets/license.txt"
     ]
 }
