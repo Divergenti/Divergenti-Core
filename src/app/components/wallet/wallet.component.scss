@@ -3,6 +3,10 @@
 .wallet
 {
 
+    .mat-paginator-container {
+        background-color: black;;
+    }
+
     .mat-table {
         background-color: white !important;
         color: black !important;
@@ -11,6 +15,11 @@
     .mat-cell {
         color: black;
     }
+
+    .mat-tab-link {
+        font-weight: bolder !important;
+    }
+
 
     .mat-tab-nav-bar {
         background-color: white !important;
@@ -170,10 +179,10 @@
     }
 
     .wallet-split-right {
-       padding-left: 20px;
        flex-grow: 1;
        width: 35%;
        align-self: center;
+       text-align: justify;
     }
 
     .wallet-info-icon {

@@ -6,9 +6,25 @@
 
     }
 
-    .mat-divider {
-        color: gray;
+    .wallet-path {
+        margin-left: 15px;
     }
+
+    .block-buttons {
+        margin-left: 15px !important;
+    }
+
+    .mat-divider {
+        border-top-color: rgba(0,0,0,.12);
+        display: inline-block;
+        border-top-width: 1px;
+        border-top-style: solid;
+        position: absolute;
+        margin: 0;
+        width: calc(100% - 64px);
+        margin-left: 25px;
+    }
+
     .about-card {
         max-width: 600px;
         margin-bottom: 30px;

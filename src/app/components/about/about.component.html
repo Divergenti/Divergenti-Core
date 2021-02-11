@@ -19,7 +19,7 @@
                         <span class="about-nav-title">What's new</span>
                         <mat-icon class="about-nav-caret" color="primary">
                             <svg>
-                                <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                                <path fill="#8282e9" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                             </svg>
                         </mat-icon>
                     </a>
@@ -28,7 +28,7 @@
                         <span class="about-nav-title">Third party licenses</span>
                         <mat-icon class="about-nav-caret" color="primary">
                             <svg>
-                                <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                                <path fill="#8282e9" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                             </svg>
                         </mat-icon>
                     </a>
@@ -37,7 +37,7 @@
                         <span class="about-nav-title">Privacy Policy</span>
                         <mat-icon class="about-nav-caret" color="primary">
                             <svg>
-                                <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                                <path fill="#8282e9" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                             </svg>
                         </mat-icon>
                     </a>
@@ -45,7 +45,7 @@
                 </mat-list>
             </mat-nav-list>
 
-            <p><br>
+            <p class="wallet-path"><br>
                 Wallet directory:
                 <span *ngIf="!appState.isElectron; else directoryLink">
                     <em>{{ node.dataDirectoryPath }}</em>
@@ -57,14 +57,10 @@
                 </ng-template>
                 <br>
             </p>
-
-            <button class="cancel-button" mat-stroked-button onclick="window.open('https://www.divergenti.cl')">DIVERGENTI WEBSITE</button> &nbsp;
-            <button class="cancel-button" mat-stroked-button onclick="window.open('https://github.com/divergenti')">SOURCE CODE</button> &nbsp;
-            <button class="cancel-button" mat-stroked-button (click)="openFolder(node.dataDirectoryPath+'/DivergentiMain')">OPEN FOLDER WALLET</button> &nbsp;
-
+                <button class="cancel-button" mat-stroked-button onclick="window.open('https://www.divergenti.cl')">DIVERGENTI WEBSITE</button> &nbsp;
+                <button class="cancel-button" mat-stroked-button onclick="window.open('https://github.com/divergenti')">SOURCE CODE</button> &nbsp;
+                <button class="cancel-button" mat-stroked-button (click)="openFolder(node.dataDirectoryPath+'/DivergentiMain')">OPEN FOLDER WALLET</button> &nbsp;
         </mat-card-content>
 
     </mat-card>
-
-    <div class="about-heart">Crafted with 💖</div>
 </div>

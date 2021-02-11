@@ -8,6 +8,15 @@
         color: black;
       }
 
+      .mat-tab-label {
+          font-weight: bolder;
+
+      }
+
+      .mat-tab-label-active {
+          background-color: transparent;
+      }
+
       .resync-button {
           background-color: #8282e9;
       }

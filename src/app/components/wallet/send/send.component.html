@@ -1,10 +1,10 @@
-<div class="content content-centered">
+<div class="content">
   <h1 class="mat-h1" *ngIf="appState.handset">{{appState.appTitle$ | async}}</h1>
 
   <mat-card class="available">
     <h2 class="mat-h2">
       Amount available:
-      <strong class="balance">{{ totalBalance | coinNotation }} {{ coinUnit }}</strong>
+      <strong class="balance">{{ totalBalance | coinNotation | number: '1.0-8': this.globalService.locale }} {{ coinUnit }}</strong>
     </h2>
   </mat-card>
 
@@ -12,8 +12,8 @@
     <form [formGroup]="sendForm">
       <mat-form-field appearance="outline">
         <mat-label>Amount</mat-label>
-        <input matInput id="amount" formControlName="amount" name="amount" placeholder="0.00 {{ coinUnit }}">
         <mat-icon matSuffix>account_balance_wallet</mat-icon>
+        <input matInput id="amount" formControlName="amount" name="amount" placeholder="0.00 {{ coinUnit }}">
         <mat-error *ngIf="formErrors.amount">
           {{ formErrors.amount }}
         </mat-error>
