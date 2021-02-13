@@ -73,7 +73,6 @@
     <p>Fee: {{transaction.feeAmount | number:'1.8-8'}} <small>{{ coinUnit }}</small></p>
     <p>Destination: {{transaction.recipients[0].destinationAddress}}</p>
     <p>Transaction Id: {{transactionResult.transactionId }}</p>
-    <!-- <p>Shuffled: {{transaction.shuffleOutputs}}</p> -->
     <button mat-stroked-button (click)="cancel()">Close</button>
   </mat-card>
 

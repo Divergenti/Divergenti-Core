@@ -63,7 +63,6 @@ export class HubDetailsComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        // this.subscription.unsubscribe();
     }
 
     async addHub() {
@@ -90,7 +89,6 @@ export class HubDetailsComponent implements OnInit, OnDestroy {
     removeHub(id: string) {
         console.log('Trying to remove:' + id);
         this.hubService.remove(id);
-        // this.hubs = this.settings.hubs;
         this.cd.markForCheck();
     }
 

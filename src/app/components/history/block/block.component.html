@@ -57,8 +57,6 @@
                 <div class="block-details-value" title="{{block.merkleRoot}}">
                     <span class="ellipsis" style="max-width: 100px;">{{ block.merkleRoot }}</span>
                 </div>
-                <!--  ng-class="{true:'ellipsis', false:''}[block.merkleRoot.length>=10]" -->
-                <!-- <div class="block-details-value"><span ng-class="{'ellipsis': block.merkleRoot.length > 10}">{{ block.merkleRoot | limitTo: 10 }}{{block.merkleRoot.length > 10 ? '...' : ''}}</span></div> -->
             </div>
         </mat-card>
 
@@ -82,7 +80,6 @@
                         <th mat-header-cell *matHeaderCellDef> Id </th>
                         <td mat-cell *matCellDef="let transaction">
                                 {{transaction.txid}}
-                            <!-- <a routerLink="/history/transaction/{{transaction.txid}}">{{transaction.txid}}</a> -->
                         </td>
                     </ng-container>
 

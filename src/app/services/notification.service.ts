@@ -50,63 +50,6 @@ export class NotificationService {
     constructor() {
         this.notifications = new Array<NotificationTile>();
 
-        // this.notifications.push(
-        //     {
-        //         title: 'Unable to connect with server',
-        //         icon: 'warning',
-        //         hint: 'This normally means there is communication issues between City Hub, and the City Chain background process.',
-        //         message: 'Exception: STACK OVERFLOW!',
-        //         count: 5
-        //     });
-
-        // this.notifications.push(
-        //     {
-        //         title: 'Unable to connect with server',
-        //         icon: 'error',
-        //         hint: 'This normally means there is communication issues between City Hub, and the City Chain background process.',
-        //         message: 'Exception: STACK OVERFLOW!',
-        //         count: 1
-        //     });
-
-        // this.notifications.push(
-        //     {
-        //         title: 'You sent a transaction',
-        //         hint: '1230 coins',
-        //         message: 'Is now fully confirmed (50 confirms).',
-        //         icon: 'done_all',
-        //     });
-
-        // this.notifications.push(
-        //     {
-        //         title: 'You sent a transaction',
-        //         hint: '2 coins',
-        //         message: 'Unconfirmed',
-        //         icon: 'send',
-        //     });
-
-        // this.notifications.push(
-        //     {
-        //         title: 'You made a block!',
-        //         hint: 'You received staking rewards of 20 coins',
-        //         message: 'You are currently 0.5% of the total network weight.',
-        //         icon: 'plus_one',
-        //     });
-
-        // this.notifications.push(
-        //     {
-        //         title: 'You sent a transaction',
-        //         hint: '2 coins',
-        //         message: 'Unconfirmed',
-        //         icon: 'done',
-        //     });
-
-        // this.notifications.push(
-        //     {
-        //         title: 'You add a new contact',
-        //         hint: 'Contacts can be used to quickly send payments to merchants and people.',
-        //         message: '',
-        //         icon: 'bookmark',
-        //     });
     }
 
     private find(tile: NotificationTile) {
@@ -135,7 +78,7 @@ export class NotificationService {
         const notification = {
             title: tile.title,
             body: tile.body,
-            icon: require('path').join(__dirname, '../../../assets/city/logo.png')
+            icon: require('path').join(__dirname, '../../../assets/divergenti-core/logo.png')
         };
 
         const nativeNotification = new window.Notification(notification.title, notification);

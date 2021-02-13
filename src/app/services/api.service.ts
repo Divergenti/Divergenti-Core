@@ -35,7 +35,7 @@ export class ApiService {
     private daemon;
 
     public apiUrl: string;
-    public apiVersion = 'v2.0-dev'; // This will change into "v1.0-city" in a future update to the City Chain daemon.
+    public apiVersion = 'v2.0-dev';
     public genesisDate: Date;
     public apiPort: number;
 
@@ -142,27 +142,6 @@ export class ApiService {
             .pipe(map((response: Response) => response));
     }
 
-    // getAddressBookAddresses(): Observable<any> {
-    //     return Observable
-    //         .interval(this.pollingInterval)
-    //         .startWith(0)
-    //         .switchMap(() => this.http.get(this.apiUrl + '/AddressBook'))
-    //         .map((response: Response) => response);
-    // }
-
-    // addAddressBookAddress(data: AddressLabel): Observable<any> {
-    //     return this.http
-    //         .post(this.apiUrl + '/AddressBook/address', JSON.stringify(data), { headers: this.headers })
-    //         .map((response: Response) => response);
-    // }
-
-    // removeAddressBookAddress(label: string): Observable<any> {
-    //     const params: URLSearchParams = new URLSearchParams();
-    //     params.set('label', label);
-    //     return this.http
-    //         .delete(this.apiUrl + '/AddressBook/address', new RequestOptions({ headers: this.headers, params: params }))
-    //         .map((response: Response) => response);
-    // }
 
     /**
      * Gets available wallets at the default path
@@ -633,7 +612,7 @@ export class ApiService {
             .pipe(map((response: Response) => response));
     }
 
-    /** Use this to handle error in the initial startup (wallet/files) of City Hub. */
+    /** Use this to handle error in the initial startup (wallet/files) of Divergenti Core. */
     handleInitialError(error: HttpErrorResponse | any) {
         // Only show snackbar errors when we have connected. Initially we will receive some errors due to aggresive
         // attempts at connecting to the node.

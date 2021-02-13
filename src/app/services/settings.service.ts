@@ -52,22 +52,6 @@ export class SettingsService {
         this.storage.setValue('Settings:Hub', value);
     }
 
-    // get identities(): any {
-    //     return this.storage.getJSON('Settings:Identities');
-    // }
-
-    // set identities(value: any) {
-    //     this.storage.setJSON('Settings:Identities', value);
-    // }
-
-    // get identity(): string {
-    //     return this.storage.getValue('Settings:Identity');
-    // }
-
-    // set identity(value: string) {
-    //     this.storage.setValue('Settings:Identity', value);
-    // }
-
     get language(): string {
         return this.storage.getValue('Settings:Language');
     }

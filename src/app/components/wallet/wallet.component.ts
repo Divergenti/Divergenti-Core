@@ -95,8 +95,6 @@ export class WalletComponent implements OnInit, OnDestroy {
             this.parseHistory(items as TransactionInfo[]);
             this.ref.detectChanges();
 
-            // this.dataSource.paginator = this.paginator;
-            // this.dataSource.sort = this.sort;
         });
     }
 
@@ -123,7 +121,6 @@ export class WalletComponent implements OnInit, OnDestroy {
                 this.ref.detectChanges();
             });
 
-            // this.animal = result;
         });
     }
 

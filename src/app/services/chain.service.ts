@@ -30,16 +30,7 @@ export class ChainService {
         if (!ChainService.singletonInstance) {
 
             this.availableChains = [
-                { name: 'Divergenti', identity: 'diver', tooltip: 'Divergenti Core', port: 3452, rpcPort: 3451, apiPort: 39320, wsPort: 39320, network: 'divergentimain', genesisDate: new Date(2020, 11, 21 )},
-                { name: 'Divergenti Node (RegTest)', identity: 'diver', tooltip: 'Divergenti Node', port: 14333, rpcPort: 14334, apiPort: 14335, wsPort: 14336, network: 'cityregtest', genesisDate: new Date(2018, 9, 1) },
-                { name: 'Divergenti Node (Test)', identity: 'diver', tooltip: 'Divergenti Node', port: 24333, rpcPort: 24334, apiPort: 24335, wsPort: 24336, network: 'citytest', genesisDate: new Date(2018, 9, 1) },
-
-                { name: 'Stratis', identity: 'stratis', tooltip: 'Stratis Core', port: 16178, rpcPort: 16174, apiPort: 37221, wsPort: 4336, network: 'stratismain', genesisDate: new Date(2016, 8, 6) },
-                { name: 'Stratis (RegTest)', identity: 'stratis', tooltip: 'Stratis Core', port: 18444, rpcPort: 18442, apiPort: 37221, wsPort: 4336, network: 'stratisregtest', genesisDate: new Date(2017, 5, 16) },
-                { name: 'Stratis (Test)', identity: 'stratis', tooltip: 'Stratis Core', port: 26178, rpcPort: 26174, apiPort: 38221, wsPort: 4336, network: 'stratistest', genesisDate: new Date(2017, 5, 4) },
-
-                { name: 'Bitcoin', identity: 'bitcoin', tooltip: 'Divergenti Node: Bitcoin', port: 8333, rpcPort: 8332, apiPort: 37220, wsPort: 4336, network: 'bitcoinmain', genesisDate: new Date(2009, 1, 3) },
-                { name: 'Bitcoin (Test)', identity: 'bitcoin', tooltip: 'Divergenti Node: Bitcoin', port: 18333, rpcPort: 18332, apiPort: 38220, wsPort: 4336, network: 'bitcointest', genesisDate: new Date(2009, 1, 3) },
+                { name: 'Divergenti', identity: 'diver', tooltip: 'Divergenti Core', port: 3452, rpcPort: 3451, apiPort: 39320, wsPort: 39320, network: 'divergentimain', genesisDate: new Date(2020, 11, 21 )}
             ];
 
             ChainService.singletonInstance = this;

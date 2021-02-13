@@ -99,7 +99,6 @@ export class ReceiveComponent implements OnInit, OnDestroy {
 
     private getUnusedReceiveAddressSimpleMode() {
         // tslint:disable-next-line
-        // debugger;
         const network = this.appState.networkDefinition;
         const xpubkey = this.wallet.activeWallet.extPubKey;
         const root = bip32.fromBase58(xpubkey);
@@ -160,30 +159,6 @@ export class ReceiveComponent implements OnInit, OnDestroy {
         const walletInfo = new WalletInfo(this.globalService.getWalletName());
         this.log.info('Wallet info:', walletInfo);
 
-        // this.apiService.getAllAddresses(walletInfo)
-        //     .subscribe(
-        //         response => {
-        //             this.allAddresses = [];
-        //             this.usedAddresses = [];
-        //             this.unusedAddresses = [];
-        //             this.changeAddresses = [];
-        //             this.allAddresses = response.addresses;
-
-        //             for (const address of this.allAddresses) {
-        //                 if (address.isUsed) {
-        //                     this.usedAddresses.push(address.address);
-        //                 } else if (address.isChange) {
-        //                     this.changeAddresses.push(address.address);
-        //                 } else {
-        //                     this.unusedAddresses.push(address.address);
-        //                 }
-        //             }
-        //             // }
-        //         },
-        //         error => {
-        //             this.log.error('Failed to get addresses:', error);
-        //         }
-        //     );
     }
 
     private getAddressesFullNode() {

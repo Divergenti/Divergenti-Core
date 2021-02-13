@@ -120,9 +120,7 @@ export class CreateAccountComponent implements OnInit {
             .getNewMnemonic()
             .subscribe(
                 response => {
-                    // if (response.status >= 200 && response.status < 400) {
                     this.mnemonic = response;
-                  //  this.mnemonicHash = this.mnemonic.split(' ')[2];
 
                     // }
                 },

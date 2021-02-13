@@ -65,8 +65,6 @@ export class SettingsComponent {
 
     openDevTools() {
         this.electronService.ipcRenderer.sendSync('open-dev-tools');
-        // const win = new BrowserWindow();
-        // win.webContents.openDevTools();
     }
 
     onChanged(event) {

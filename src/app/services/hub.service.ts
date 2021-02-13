@@ -60,8 +60,6 @@ export class HubService {
         // const url = hub.content.url + '/api/' + type;
         const url = 'http://localhost:4335/api/' + type;
 
-        // const url = 'http://localhost:4335/api/' + signedDocument.id; // .id is a shortcut of '@type/' + id.
-        // const url = 'https://identity.city-chain.org/' + signedDocument.container + '/' + signedDocument.id;
 
         console.log('url', url);
 
@@ -103,25 +101,6 @@ export class HubService {
             this.persist();
         }
     }
-
-    // async refresh(hub: HubContainer) {
-    //     const originalUrl = hub.originalUrl;
-    //     const wellKnownUrl = hub.wellKnownUrl;
-
-    //     console.log('HUB1:', hub);
-
-    //     try {
-    //         hub = await this.api<HubContainer>(hub.wellKnownUrl);
-    //         hub.originalUrl = originalUrl;
-    //         hub.wellKnownUrl = wellKnownUrl;
-    //         hub.status = 'Online';
-
-    //         console.log('HUB2:', hub);
-    //     }
-    //     catch (err) {
-    //         hub.status = 'Error: ' + err;
-    //     }
-    // }
 
     /**
      * Add a hub

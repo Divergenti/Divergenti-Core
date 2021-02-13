@@ -39,7 +39,7 @@
         align-items: stretch;
         min-height: 260px;
         margin-top: 10%;
-        background-image: url('../../../assets/city/splash-image.png');
+        background-image: url('../../../assets/divergenti-core/splash-image.png');
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -138,22 +138,12 @@
             min-width: 200px;
             margin-left: 25%;
             margin-right: 25%;
-            //display: flex;
-            //justify-content: center;
-            //padding-top: 40px;
+
         }
 
         .login-mode {
             display: none;
-            // flex-grow: 2;
-            // align-items: flex-end;
-            // justify-content: center;
-            // display: flex;
-            // margin-bottom: 20px;
-            // position: absolute;
-            // display: inline-block;
-            // bottom: 20px;
-            // text-align: center;
+
         }
     }
 }

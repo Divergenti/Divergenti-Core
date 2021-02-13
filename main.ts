@@ -297,8 +297,8 @@ function getAppDataPath() {
         case "linux": {
             writeLog(path.join(process.env.HOME).toString());
             return path.join(process.env.HOME);
-            
-            
+
+
         }
         default: {
             console.log("Unsupported platform!");
@@ -311,9 +311,9 @@ function createWindow() {
     // Create the browser window.
     let iconpath;
     if (serve) {
-        iconpath = nativeImage.createFromPath('./src/assets/' + coin.identity + '/logo-icon.png');
+        iconpath = nativeImage.createFromPath('./src/assets/divergenti-core/logo-icon.png');
     } else {
-        iconpath = nativeImage.createFromPath(path.resolve(__dirname, '..//..//resources//dist//assets//' + coin.identity +'//logo-icon.png'));
+        iconpath = nativeImage.createFromPath(path.resolve(__dirname, '..//..//resources//dist//assets//divergenti-core//logo-icon.png'));
     }
     mainWindow = new BrowserWindow({
         width: 1150,

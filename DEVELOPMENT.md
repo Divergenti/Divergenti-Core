@@ -1,11 +1,11 @@
-City Hub: Development Guidelines
+Divergenti Core: Development Guidelines
 ===============
 
-So if anyone want to try doing some development on City Hub, this is the absolute easiest way to get started:
+So if anyone want to try doing some development on Divergenti Core, this is the absolute easiest way to get started:
 
-1. Download, install and run City Hub. By running the official release of City Hub, you also get the City Chain daemon running locally. This will host the APIs that are used by City Hub.
+1. Download, install and run Divergenti Core. By running the official release of Divergenti Core, you also get the Divergenti FullNode daemon running locally. This will host the APIs that are used by Divergenti Core.
 
-2. Clone the City Hub source code, navigate to the root, run "npm install" and then "npm start". This will launch a web server with the angular app.
+2. Clone the Divergenti Core source code, navigate to the root, run "npm install" and then "npm start". This will launch a web server with the angular app.
 
 3. Hit F5 in Visual Studio Code to debug, select the "Electron: All" to debug both renderer and main processes.
 
@@ -27,14 +27,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Find icons to use here: [Material Icons](https://material.io/tools/icons/?style=outline)
 
-## Register GitHub publish token
-
-Run this PowerShell command:
-
-```ps
- [Environment]::SetEnvironmentVariable("GH_TOKEN","<YOUR_TOKEN_HERE>","User")
-```
-
 ## Package
 
 To test the package locally before submitting pull request, you can run:
@@ -45,21 +37,19 @@ npm run build:mac
 npm run build:win:x64
 ```
 
-## City Chain daemon
+## FullNode daemon
 
-To update with the latest City Chain daemon, you must edit the build.yml and edit the parameter named "daemon". Make sure you set it
-to a public released and tested version of the City Chain daemon.
+To update with the latest Divergenti FullNode daemon, you must edit the build.yml and edit the parameter named "daemon". Make sure you set it
+to a public released and tested version of the Divergenti FullNode daemon.
 
 ## Continuous integration (CI)
 
 Continuous integration is handled using Visual Studio Team Services and YAML. CI build scripts are localted in the .vsts-ci.yml file and
 the build.yml. These files are used for multi-platform builds, that runs on different OS agents on VSTS.
 
-Check out the [city-chain](https://dev.azure.com/citychain/city-chain/) project for build pipelines and more.
-
 ## Security
 
-Security is always a very important concern, and City Hub has more built-in features that most normal wallets. More features, 
+Security is always a very important concern, and Divergenti Core has more built-in features that most normal wallets. More features, 
 means more exposure to potential security issues.
 
 It is important that all contributors are well aware of security principles, and especially regarding Electron, 

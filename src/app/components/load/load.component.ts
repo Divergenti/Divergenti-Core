@@ -70,12 +70,8 @@ export class LoadComponent implements OnDestroy {
         }
 
         this.networks = [
-            // { id: 'main', name: 'Main' },
             { id: 'divergentimain', name: 'Divergenti Main' },
-            // { id: 'citytest', name: 'City Chain (Test)' },
-            // { id: 'stratistest', name: 'Stratis (Test)' },
-            // { id: 'stratismain', name: 'Stratis' },
-            // { id: 'regtest', name: 'RegTest' }
+
         ];
 
 
@@ -117,14 +113,7 @@ export class LoadComponent implements OnDestroy {
             this.appState.connected = true;
             this.fullNodeConnect();
         } else if (this.appState.mode === 'simple') {
-            // TODO: Should send the correct network, hard-coded to city main for now.
-            // const network = coininfo('city').toBitcoinJS();
-            // this.appState.networkDefinition = network;
 
-            // this.appState.networkParams = {
-            //     private: network.wif,
-            //     public: network.pubKeyHash
-            // };
 
             this.loading = false;
             this.appState.connected = true;
@@ -220,7 +209,6 @@ export class LoadComponent implements OnDestroy {
     }
 
     start() {
-        // this.simpleWalletConnect();
 
         // We have successful connection with daemon, make sure we inform the main process of |.
         this.electronService.ipcRenderer.send('daemon-started');
@@ -264,9 +252,7 @@ export class LoadComponent implements OnDestroy {
 
         this.connection.on('txs', (transactions) => {
             console.log(transactions);
-            // TODO: Update a bitcore-lib fork to add support for Stratis/City Chain.
-            // var tx1 = transactions[0];
-            // var tx = bitcoin.Transaction.fromHex(tx1.value.hex);
+
         });
 
         const self = this;

@@ -83,7 +83,7 @@ export class ApplicationStateService {
 
     shutdownDelayed = false;
 
-    /** Indicates if we are connected from City Hub with the Divergenti Core daemon. */
+    /** Indicates if we are connected from Divergenti Core with the Divergenti Core daemon. */
     connected = false;
 
     changingMode = false;

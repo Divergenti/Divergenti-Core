@@ -72,8 +72,8 @@
     },
     "extraResources": [
         "daemon/**/*",
-        "dist/assets/diver/icon-tray.ico",
-        "dist/assets/diver/logo-icon.png",
+        "dist/assets/divergenti-core/icon-tray.ico",
+        "dist/assets/divergenti-core/logo-icon.png",
         "dist/assets/license.txt"
     ]
 }

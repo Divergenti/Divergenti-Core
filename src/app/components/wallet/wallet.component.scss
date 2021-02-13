@@ -44,10 +44,7 @@
     }
 
      .dashboard-card {
-        //height: 100%;
-        //margin: 20px;
         min-height: 150px;
-        //width: 100%;
     }
 
     .mat-card {
@@ -129,23 +126,7 @@
             font-style: italic;
             color: rgba($color: silver, $alpha: 0.75)
         }
-
-        // .mat-row {
-        //     background-color: red! important;
-        //     //color: blue !important;
-        // }
-
-        // .mat-row:hover {
-        //     background-color: rgba(mat-color($primary, 'default'), .6);
-        //     //background-color: red! important;
-        //     //color: blue !important;
-        // }
     }
-
-    // .wallet-transactions-table .mat-row {
-    //     background-color: red! important;
-    //     color: blue !important;
-    // }
 
     .wallet-confirmed-icon {
         font-size: 14px;

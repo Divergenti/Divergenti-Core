@@ -8,11 +8,9 @@ import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { LoadComponent } from './components/load/load.component';
 import { NetworkComponent } from './components/network/network.component';
-import { MerchantsComponent } from './components/merchants/merchants.component';
 import { UpdateComponent } from './components/update/update.component';
 import { HistoryComponent } from './components/history/history.component';
 import { AdvancedComponent } from './components/advanced/advanced.component';
-import { PaperWalletComponent } from './components/paperwallet/paperwallet.component';
 import { ToolsComponent } from './components/tools/tools.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { NetworkDetailsComponent } from './components/network/network-details.component';
@@ -53,22 +51,6 @@ const routes: Routes = [
         data: {
             title: 'Dashboard'
         }
-    },
-    {
-        path: 'paperwallet',
-        component: PaperWalletComponent,
-        canActivate: [AuthenticatedUserGuard],
-        data: {
-            title: 'Paperwallet'
-        }
-    },
-    {
-        path: 'merchants',
-        component: MerchantsComponent,
-        canActivate: [AuthenticatedUserGuard],
-        data: {
-            title: 'Merchants'
-        },
     },
     {
         path: 'settings',

@@ -347,10 +347,6 @@ export class SendComponent implements OnInit, OnDestroy {
             );
     }
 
-    // public get sentAmount(): number {
-    //     return Number(this.transaction.amount);
-    // }
-
     private openConfirmationModal() {
 
         console.log('Show confirmation TX: ', this.transaction);
@@ -359,9 +355,6 @@ export class SendComponent implements OnInit, OnDestroy {
         this.showSendingField = false;
         this.showConfirmationField = true;
 
-        // const modalRef = this.modalService.open(SendConfirmationComponent, { backdrop: "static" });
-        // modalRef.componentInstance.transaction = this.transaction;
-        // modalRef.componentInstance.transactionFee = this.estimatedFee;
     }
 
     private cancelSubscriptions() {

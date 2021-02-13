@@ -241,10 +241,10 @@ function createWindow() {
     // Create the browser window.
     var iconpath;
     if (serve) {
-        iconpath = electron_1.nativeImage.createFromPath('./src/assets/' + coin.identity + '/logo-icon.png');
+        iconpath = electron_1.nativeImage.createFromPath('./src/assets/divergenti-core/logo-icon.png');
     }
     else {
-        iconpath = electron_1.nativeImage.createFromPath(path.resolve(__dirname, '..//..//resources//dist//assets//' + coin.identity + '//logo-icon.png'));
+        iconpath = electron_1.nativeImage.createFromPath(path.resolve(__dirname, '..//..//resources//dist//assets//divergenti-core//logo-icon.png'));
     }
     mainWindow = new electron_1.BrowserWindow({
         width: 1150,

@@ -23,14 +23,12 @@ import { GlobalService } from './services/global.service';
 import { LoadModule } from './components/load/load.module';
 import { NetworkModule } from './components/network/network.module';
 import { DetailsModule } from './components/details/details.module';
-import { MerchantsModule } from './components/merchants/merchants.module';
 import { environment } from '../environments/environment';
 import { ChainService } from './services/chain.service';
 import { UpdateModule } from './components/update/update.module';
 import { HistoryModule } from './components/history/history.module';
 import { AdvancedModule } from './components/advanced/advanced.module';
 import { Logger } from './services/logger.service';
-import { PaperWalletModule } from './components/paperwallet/paperwallet.module';
 import { httpInterceptorProviders } from './shared/http-interceptors';
 import { HttpErrorHandler } from './services/http-error-handler.service';
 import { ToolsModule } from './components/tools/tools.module';
@@ -72,11 +70,9 @@ registerLocaleData(localezIT);
         NotFoundModule,
         ReportModule,
         UpdateModule,
-        MerchantsModule,
         DetailsModule,
         AdvancedModule,
         ToolsModule,
-        PaperWalletModule,
         HistoryModule,
         AppRoutingModule,
         FlexLayoutModule,
@@ -86,11 +82,7 @@ registerLocaleData(localezIT);
     providers: [
         HttpErrorHandler,
         httpInterceptorProviders,
-        // ApiService,
-        // HubService,
-        // ChainService,
         ElectronService,
-        // GlobalService,
         { provide: APP_TITLE, useValue: 'Divergenti Core' },
         {
             provide: LOCALE_ID,

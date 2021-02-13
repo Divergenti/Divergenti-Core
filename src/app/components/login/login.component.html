@@ -2,8 +2,8 @@
 
     <div class="login-banner">
         <div class="login-banner-content">
-            <img src="assets/city-hub/logo-white.png" class="login-logo">
-            <img src="assets/city-hub/elcaminodigital.png" class="login-logotype">
+            <img src="assets/divergenti-core/logo-white.png" class="login-logo">
+            <img src="assets/divergenti-core/elcaminodigital.png" class="login-logotype">
             <p class="login-banner-text">Release {{appState.version}}<br>
                 Network: Divergenti Main<br>
                 Mode: {{appState.mode}}<br>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="login-content">
-        <img src="assets/city-hub/esperando.png" class="login-welcome">
+        <img src="assets/divergenti-core/esperando.png" class="login-welcome">
             <br>
             <br>
         <div class="login-accounts" *ngIf="hasWallet">
@@ -35,16 +35,12 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Wallet password</mat-label>
                     <input matInput type="password" (keyup.enter)="unlock()" [(ngModel)]="password" placeholder="Fill out to unlock wallet">
-                    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-                    <!-- <mat-hint>This is your personal password, not the 12-word phrase. Make sure you use a password you can remember, nobody else have your password and nobody can help you recover it.</mat-hint> -->
                 </mat-form-field>
                 <br>
                 <button class="cancel-button" (click)="cancel()" mat-raised-button>CREATE</button>
                 <button class="unlock-button" (click)="unlock()" [disabled]="unlocking" mat-raised-button color="primary">UNLOCK</button>&nbsp;
 
                 <br>
-                <!-- <mat-progress-bar *ngIf="unlocking && appState.isSimpleMode" mode="determinate" [value]="unlockPercentage"></mat-progress-bar>
-                <mat-spinner *ngIf="unlocking && appState.isSimpleMode"></mat-spinner> -->
                 <br>
                 <div *ngIf="invalidPassword">The password is not correct.</div>
             </span>

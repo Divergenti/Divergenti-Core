@@ -120,7 +120,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.apiService.getWalletFiles()
             .subscribe(
                 response => {
-                    // if (response.status >= 200 && response.status < 400) {
                     this.wallets = response.walletsFiles;
                     this.globalService.setWalletPath(response.walletsPath);
 
@@ -147,7 +146,6 @@ export class LoginComponent implements OnInit, OnDestroy {
                                 }
                             }
 
-                            // this.wallets[wallet] = this.wallets[wallet].slice(0, -12);
                         }
 
                         // If no wallet has been selected, pick the first one.
@@ -160,7 +158,6 @@ export class LoginComponent implements OnInit, OnDestroy {
                     }
 
                     this.cd.markForCheck();
-                    // }
                 },
                 error => {
                     this.apiService.handleException(error);
@@ -208,8 +205,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 
             console.log(wallet);
 
-            // bip38.decryptAsync(wallet.encryptedSeed, walletLoad.password, (decryptedKey) => {
-            // }, null, this.appState.networkParams);
 
             const decryptedKey = bip38.decrypt(wallet.encryptedSeed, walletLoad.password, null, null, this.appState.networkParams);
 
@@ -220,7 +215,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 
             const diff = stop - start;
             console.log(diff + 'ms taken to decrypt.');
-            // console.log('decryptedKey:', decryptedKey);
 
             self.authService.setAuthenticated();
             self.unlocking = false;
@@ -247,7 +241,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.apiService.getGeneralInfoOnce(walletInfo)
             .subscribe(
                 response => {
-                    // if (response.status >= 200 && response.status < 400) {
                     const responseMessage = response;
 
                     this.globalService.setNetwork(responseMessage.network);
@@ -274,7 +267,6 @@ export class LoginComponent implements OnInit, OnDestroy {
                         this.globalService.setCoinName('BitcoinTest');
                         this.globalService.setCoinUnit('TBTC');
                     }
-                    // }
                 },
                 error => {
                     this.apiService.handleException(error);
@@ -288,7 +280,6 @@ export class LoginComponent implements OnInit, OnDestroy {
                 response => {
                     this.unlocking = false;
 
-                    // if (response.status >= 200 && response.status < 400) {
                     this.authService.setAuthenticated();
                     this.wallet.start();
 
@@ -299,7 +290,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 
 
                     this.router.navigateByUrl('/dashboard');
-                    // }
                 },
                 error => {
                     if (error.status === 403 || error.status === 400) { // Invalid password / empty password
