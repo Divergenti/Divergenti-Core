@@ -123,7 +123,7 @@
                 <mat-icon>star</mat-icon>
             </button>
 
-            <button *ngIf="!appState.pageMode && !appState.handset" mat-icon-button matTooltip="Notification Center" routerLink="/notifications">
+            <button mat-icon-button matTooltip="Notification Center" routerLink="/notifications">
                 <mat-icon [matBadge]="notifications.countUnread" matBadgeColor="warn" matBadgeOverlap="true" [matBadgeHidden]="!notifications.anyUnread">notifications</mat-icon>
             </button>
 
@@ -143,12 +143,8 @@
                 <mat-icon>cloud_off</mat-icon>
             </button>
 
-            <button *ngIf="!appState.pageMode && !appState.handset" mat-icon-button [matMenuTriggerFor]="moreMenu">
+            <button  mat-icon-button [matMenuTriggerFor]="moreMenu">
                 <mat-icon>more_vert</mat-icon>
-            </button>
-
-            <button *ngIf="!appState.pageMode && appState.handset" mat-icon-button (click)="openMenu()">
-                <mat-icon>apps</mat-icon>
             </button>
 
             <mat-menu #moreMenu="matMenu">

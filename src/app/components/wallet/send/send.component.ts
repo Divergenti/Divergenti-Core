@@ -14,6 +14,7 @@ import { WalletInfo } from '../../../classes/wallet-info';
 import { Router } from '@angular/router';
 import { WalletService } from '../../../services/wallet.service';
 import { TransactionResult } from 'src/app/classes/transaction-result';
+import { LocaleService } from 'src/app/services/locale.service';
 
 @Component({
     selector: 'app-send',
@@ -49,7 +50,8 @@ export class SendComponent implements OnInit, OnDestroy {
         private router: Router,
         private wallet: WalletService,
         public globalService: GlobalService,
-        private fb: FormBuilder
+        private fb: FormBuilder,
+        public localeService: LocaleService
     ) {
         this.appState.pageMode = true;
         this.buildSendForm();

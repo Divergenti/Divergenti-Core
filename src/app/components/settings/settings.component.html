@@ -43,6 +43,17 @@
                 <mat-radio-button value="app-dark-theme">Default theme</mat-radio-button>
             </mat-radio-group>
 
+            <h3 class="mat-h3">Localization (Number and dates format)</h3>
+
+            <mat-form-field>
+                <mat-select (selectionChange)="onLocaleChange($event)" [(ngModel)]="selectedLocale" [(value)]="selectedLocale">
+                    <mat-option value="en">English</mat-option>
+                    <mat-option value="es">Español</mat-option>
+                    <mat-option value="fr">French</mat-option>
+                    <mat-option value="it">Italian</mat-option>
+                </mat-select>
+            </mat-form-field>
+
             <h3 class="mat-h3">Mode</h3>
 
             <mat-form-field>
@@ -65,8 +76,8 @@
 
             <mat-form-field>
                 <mat-select placeholder="Choose language" (selectionChange)="onChanged($event)" [(ngModel)]="selectedLanguage">
-                    <mat-option value="es-MX">Español</mat-option>
-                    <mat-option value="en-US">English</mat-option>
+                    <mat-option value="es">Español</mat-option>
+                    <mat-option value="en">English</mat-option>
                 </mat-select>
             </mat-form-field>
 

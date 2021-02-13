@@ -12,6 +12,7 @@ import { CoinAsset } from 'src/app/classes/coin-asset';
 import { NotificationService } from 'src/app/services/notification.service';
 import { P2pb2bAsset } from 'src/app/classes/p2pb2b2-asset';
 import { AppModes } from 'src/app/shared/app-modes';
+import { LocaleService } from 'src/app/services/locale.service';
 
 @Component({
     selector: 'app-dashboard',
@@ -40,7 +41,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
         private detailsService: DetailsService,
         public wallet: WalletService,
         public appModes: AppModes,
-        private fb: FormBuilder) {
+        private fb: FormBuilder,
+        public localeService: LocaleService) {
 
         // Make sure we update wallet at higher frequency.
         this.wallet.active = true;

@@ -10,6 +10,7 @@
     "files.insertFinalNewline": true,
     "editor.renderIndentGuides": true,
     "html.format.wrapLineLength": 0,
+    "js/ts.implicitProjectConfig.experimentalDecorators": true,
     "[typescript]": {
         "editor.formatOnSave": false,
         "editor.formatOnPaste": true

@@ -79,18 +79,6 @@ export class GlobalService {
         this.coinUnit = coinUnit;
     }
 
-    setlocale(value: string) {
-        this.locale = value;
-    }
-
-    getLocale(): string {
-        if (this.locale === null) {
-            console.log('Locale  null');
-            return 'en-US';
-        }
-        return this.locale;
-    }
-
     transform(value: number) {
         let temp;
         if (typeof value === 'number') {

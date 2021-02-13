@@ -8,12 +8,12 @@
                 <mat-card-subtitle>The balance of: {{wallet.walletName}}</mat-card-subtitle>
                 <mat-card-content>
                     <p>
-                        <strong>{{ (wallet.confirmedBalance | coinNotation| number: '1.0-8': this.globalService.locale) || (0 | coinNotation) }}</strong>
+                        <strong>{{ (wallet.confirmedBalance | coinNotation| number: '1.0-8': this.localeService.locale) || (0 | coinNotation) }}</strong>
                         <small class="text-uppercase"> {{ wallet.coinUnit }}</small>
                     </p>
                     <ul *ngIf="wallet.unconfirmedBalance">
                         <li>
-                            <strong>{{ (wallet.unconfirmedBalance | coinNotation | number: '1.0-8': this.globalService.locale) || (0 | coinNotation) }}</strong>
+                            <strong>{{ (wallet.unconfirmedBalance | coinNotation | number: '1.0-8': this.localeService.locale) || (0 | coinNotation) }}</strong>
                             <em> (unconfirmed)</em>
                         </li>
                     </ul>
@@ -44,50 +44,43 @@
     <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex fxLayoutGap="20px grid" fxLayoutGap.xs="0px grid" fxLayoutGap.sm="0px grid">
         <div fxFlex>
             <mat-card  class="internal-cards">
-                <mat-card-title>Connect</mat-card-title>
-                <br>
+                <mat-card-title>Conecta</mat-card-title>
                 <br>
                 <mat-card-content>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <p>Divergenti es una nuevo camino. Después de tu autodiagnostico gratis podrás conocer cuales son los mejores talentos digitales que te llevarán a la transformación digital rápida y económica que necesitas.</p>
                     <br>
-                    <br>
-                    <button class="cancel-button" mat-stroked-button color="primary" onclick="window.open('https://www.divergenti.cl/')">GET IN</button>&nbsp;
 
                 </mat-card-content>
+                <button class="cancel-button" mat-stroked-button color="primary" onclick="window.open('https://www.divergenti.cl/')">CONOCE MÁS</button>&nbsp;
 
 
             </mat-card>
         </div>
         <div fxFlex>
             <mat-card  class="internal-cards">
-                <mat-card-title>Community</mat-card-title>
-                <br>
+                <mat-card-title>Comunidad</mat-card-title>
                 <br>
                 <mat-card-content>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <p>Todos podemos ser Divergentis. Podrás ser parte de una comunidad libre y flexible que facilita la transformación digital de las Pymes haciendo MATCH cuando quieras y desde donde quieras con la mayor flexibilidad de tiempo.</p>
                     <br>
                     <br>
-                    <button class="cancel-button" mat-stroked-button color="primary" onclick="window.open('https://www.divergenti.cl/')">JOIN</button>&nbsp;
-
                 </mat-card-content>
-
-
+                <button class="cancel-button" mat-stroked-button color="primary" onclick="window.open('https://www.divergenti.cl/comunidad')">SÚMATE</button>&nbsp;
             </mat-card>
         </div>
         <div fxFlex>
             <mat-card  class="internal-cards">
-                <mat-card-title>Learn</mat-card-title>
-                <br>
+                <mat-card-title>Descentralizados</mat-card-title>
                 <br>
                 <mat-card-content>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <p>La esencia de Divergenti es construir y facilitar el abundante conocimiento para crear comunidades prósperas.</p>
                     <br>
                     <br>
-                    <button class="cancel-button" mat-stroked-button color="primary" onclick="window.open('https://www.divergenti.cl/')">SUSCRIBE</button>&nbsp;
+                    <br>
 
                 </mat-card-content>
-
-
+                <button class="cancel-button" mat-stroked-button color="primary" onclick="window.open('https://github.com/Divergenti')">EN GITHUB</button>&nbsp;
+                <button class="cancel-button" mat-stroked-button color="primary" onclick="window.open('https://discord.com/invite/c7xkRvBsGz')">EN DISCORD</button>&nbsp;
             </mat-card>
         </div>
     </div>

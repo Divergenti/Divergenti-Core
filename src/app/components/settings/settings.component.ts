@@ -6,6 +6,7 @@ import { Debugger } from 'electron';
 import { SettingsService } from 'src/app/services/settings.service';
 import { JsonHubProtocol } from '@aspnet/signalr';
 import { HubService } from 'src/app/services/hub.service';
+import { LocaleService } from 'src/app/services/locale.service';
 
 @Component({
     selector: 'app-settings',
@@ -20,6 +21,7 @@ export class SettingsComponent {
     selectedClearOnExit: boolean;
     selectedTheme: string;
     selectedLanguage: string;
+    selectedLocale: string;
     selectedCurrency: string;
     selectedWalletMode: string;
     selectedShowInTaskbar: boolean;
@@ -35,13 +37,15 @@ export class SettingsComponent {
         public electron: ElectronService,
         public settings: SettingsService,
         public hubService: HubService,
-        public appModes: AppModes) {
+        public appModes: AppModes,
+        private localeService: LocaleService) {
 
         this.selectedTheme = theme.currentTheme;
         this.selectedAutoLock = settings.autoLock;
         this.selectedClearOnExit = settings.clearOnExit;
         this.selectedWalletMode = settings.walletMode;
         this.selectedMode = settings.mode;
+        this.selectedLocale = settings.locale;
         this.selectedShowInTaskbar = settings.showInTaskbar;
         this.selectedOpenOnLogin = settings.openOnLogin;
         this.selectedHub = settings.hub;
@@ -51,6 +55,12 @@ export class SettingsComponent {
 
     onThemeChange(event) {
         this.theme.toggle();
+    }
+
+    onLocaleChange(event) {
+        this.localeService.locale = this.selectedLocale;
+        this.localeService.registerCulture(this.selectedLocale);
+        console.log('Locale value: ' + this.selectedLocale);
     }
 
     openDevTools() {
@@ -66,6 +76,7 @@ export class SettingsComponent {
         this.settings.walletMode = this.selectedWalletMode;
         this.settings.language = this.selectedLanguage;
         this.settings.currency = this.selectedCurrency;
+        this.settings.locale = this.selectedLocale;
         this.settings.showInTaskbar = this.selectedShowInTaskbar;
         this.settings.openOnLogin = this.selectedOpenOnLogin;
         this.settings.autoLock = this.selectedAutoLock;
@@ -74,6 +85,6 @@ export class SettingsComponent {
 
         console.log('selectedOpenOnLogin:', this.selectedOpenOnLogin);
 
-        this.electron.ipcRenderer.send('settings', { openAtLogin: this.settings.openOnLogin, showInTaskbar: this.settings.showInTaskbar });
+        this.electron.ipcRenderer.send('settings', { locale: this.selectedLanguage, language: this.selectedLanguage, openAtLogin: this.settings.openOnLogin, showInTaskbar: this.settings.showInTaskbar });
     }
 }

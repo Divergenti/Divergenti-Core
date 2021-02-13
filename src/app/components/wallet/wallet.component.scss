@@ -88,22 +88,6 @@
         color: black !important;
     }
 
-    .dashboard-split-left {
-        flex-grow: 2;
-        min-width: 230px;
-        width: 65%;
-        background: white;
-        color: black !important;
-
-    }
-
-    .dashboard-split-right {
-       padding-left: 20px;
-       flex-grow: 1;
-       width: 35%;
-       align-self: center;
-    }
-
     @media screen and (max-width: 599px) {
         .dashboard-split-card
         {
@@ -180,7 +164,8 @@
 
     .wallet-split-right {
        flex-grow: 1;
-       width: 35%;
+       margin-top: 5px;
+       width: 65%;
        align-self: center;
        text-align: justify;
     }

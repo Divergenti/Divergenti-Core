@@ -4,7 +4,7 @@
   <mat-card class="available">
     <h2 class="mat-h2">
       Amount available:
-      <strong class="balance">{{ totalBalance | coinNotation | number: '1.0-8': this.globalService.locale }} {{ coinUnit }}</strong>
+      <strong class="balance">{{ totalBalance | coinNotation | number: '1.0-8': this.localeService.locale }} {{ coinUnit }}</strong>
     </h2>
   </mat-card>
 

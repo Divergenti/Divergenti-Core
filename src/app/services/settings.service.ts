@@ -76,6 +76,14 @@ export class SettingsService {
         this.storage.setValue('Settings:Language', value);
     }
 
+    set locale(value: string) {
+        this.storage.setValue('Settings:Locale', value);
+    }
+
+    get locale(): string {
+        return this.storage.getValue('Settings:Locale');
+    }
+
     get currency(): string {
         return this.storage.getValue('Settings:Currency');
     }

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RootComponent } from './components/root/root.component';
 import { MaterialModule } from './material.module';
@@ -37,8 +37,18 @@ import { ToolsModule } from './components/tools/tools.module';
 import { NotificationsModule } from './components/notifications/notifications.module';
 import { ReportModule } from './components/report/report.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LocaleService } from './services/locale.service';
 import { HubService } from './services/hub.service';
+import localeEN from '@angular/common/locales/en';
+import localeES from '@angular/common/locales/es';
+import localezFR from '@angular/common/locales/fr';
+import localezIT from '@angular/common/locales/it';
+import { registerLocaleData } from '@angular/common';
 
+registerLocaleData(localeEN);
+registerLocaleData(localeES);
+registerLocaleData(localezFR);
+registerLocaleData(localezIT);
 @NgModule({
     declarations: [
     ],
@@ -82,6 +92,12 @@ import { HubService } from './services/hub.service';
         ElectronService,
         // GlobalService,
         { provide: APP_TITLE, useValue: 'Divergenti Core' },
+        {
+            provide: LOCALE_ID,
+            deps: [LocaleService],
+            useFactory: (Locale: { locale: any; }) => Locale.locale
+        }
+
     ],
     bootstrap: [RootComponent]
 })
