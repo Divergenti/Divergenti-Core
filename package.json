@@ -118,7 +118,7 @@
         "core-js": "3.6.5",
         "dexie": "3.0.2",
         "diver-coininfo": "file:/./contrib/diver-coininfo-5.1.0.tgz",
-        "electron": "^11.2.3",
+        "electron": "^9.2.0",
         "electron-builder": "22.9.1",
         "electron-reload": "1.5.0",
         "enhanced-resolve": "4.3.0",
