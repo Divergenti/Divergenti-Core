@@ -15,7 +15,12 @@ export class AboutComponent implements OnInit {
     @HostBinding('class.about') hostClass = true;
     public nodeStatusSubscription$: Observable<NodeStatus>;
 
-    constructor(public appState: ApplicationStateService, private apiService: ApiService, private electron: ElectronService) {
+    constructor(
+        public appState: ApplicationStateService,
+        private apiService: ApiService,
+        private electron: ElectronService,
+        private electronService: ElectronService
+        ){
         this.appState.pageMode = false;
     }
 
@@ -23,7 +28,7 @@ export class AboutComponent implements OnInit {
         this.nodeStatusSubscription$ = this.apiService.getNodeStatusInterval();
     }
 
-    openFolder(directory: string): void {
-        this.electron.shell.showItemInFolder(directory);
+    openDataFolder() {
+        const path = this.electronService.ipcRenderer.sendSync('open-data-folder', 'DivergentiMain');
     }
 }

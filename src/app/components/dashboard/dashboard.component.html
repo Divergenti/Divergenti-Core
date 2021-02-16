@@ -9,7 +9,7 @@
                 <mat-card-content>
                     <p>
                         <strong>{{ (wallet.confirmedBalance | coinNotation| number: '1.0-8': this.localeService.locale) || (0 | coinNotation) }}</strong>
-                        <small class="text-uppercase"> {{ wallet.coinUnit }}</small>
+                        <small class="text-uppercase"> <b> {{ wallet.coinUnit }}</b></small>
                     </p>
                     <ul *ngIf="wallet.unconfirmedBalance">
                         <li>
@@ -46,13 +46,14 @@
             <mat-card  class="internal-cards">
                 <mat-card-title>Conecta</mat-card-title>
                 <br>
-                <mat-card-content>
+                <mat-card-content class="internal-content">
                     <p>Divergenti es una nuevo camino. Después de tu autodiagnostico gratis podrás conocer cuales son los mejores talentos digitales que te llevarán a la transformación digital rápida y económica que necesitas.</p>
                     <br>
-
                 </mat-card-content>
+                <mat-card-actions >
+                    <br>
                 <button class="cancel-button" mat-stroked-button color="primary" onclick="window.open('https://www.divergenti.cl/')">CONOCE MÁS</button>&nbsp;
-
+            </mat-card-actions>
 
             </mat-card>
         </div>
@@ -60,27 +61,27 @@
             <mat-card  class="internal-cards">
                 <mat-card-title>Comunidad</mat-card-title>
                 <br>
-                <mat-card-content>
-                    <p>Todos podemos ser Divergentis. Podrás ser parte de una comunidad libre y flexible que facilita la transformación digital de las Pymes haciendo MATCH cuando quieras y desde donde quieras con la mayor flexibilidad de tiempo.</p>
-                    <br>
-                    <br>
+                <mat-card-content class="internal-content">
+                    <p>Todos podemos ser Divergentis. Podrás ser parte de una comunidad libre y flexible que facilita la transformación digital de las Pymes haciendo MATCH cuando quieras y desde donde quieras con la mayor flexibilidad de tiempo.    </p>
                 </mat-card-content>
+                <mat-card-actions>
+                    <br>
                 <button class="cancel-button" mat-stroked-button color="primary" onclick="window.open('https://www.divergenti.cl/comunidad')">SÚMATE</button>&nbsp;
+                </mat-card-actions>
             </mat-card>
         </div>
         <div fxFlex>
             <mat-card  class="internal-cards">
                 <mat-card-title>Descentralizados</mat-card-title>
                 <br>
-                <mat-card-content>
+                <mat-card-content class="internal-content">
                     <p>La esencia de Divergenti es construir y facilitar el abundante conocimiento para crear comunidades prósperas.</p>
-                    <br>
-                    <br>
-                    <br>
-
                 </mat-card-content>
+                <mat-card-actions >
+                    <br>
                 <button class="cancel-button" mat-stroked-button color="primary" onclick="window.open('https://github.com/Divergenti')">EN GITHUB</button>&nbsp;
                 <button class="cancel-button" mat-stroked-button color="primary" onclick="window.open('https://discord.com/invite/c7xkRvBsGz')">EN DISCORD</button>&nbsp;
+                </mat-card-actions>
             </mat-card>
         </div>
     </div>

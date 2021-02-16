@@ -78,11 +78,11 @@ export class Theming {
     }
 
     private switchToLight() {
-        this.switchTheme(Theme.Dark, Theme.Light);
+        this.switchTheme(Theme.Dark, Theme.Dark);
     }
 
     private switchToDark() {
-        this.switchTheme(Theme.Light, Theme.Dark);
+        this.switchTheme(Theme.Dark, Theme.Dark);
     }
 
     private switchTheme(from: string, to: string) {

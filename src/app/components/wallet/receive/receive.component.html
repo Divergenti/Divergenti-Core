@@ -2,9 +2,9 @@
     <h1 class="mat-h1" *ngIf="appState.handset">{{appState.appTitle$ | async}}</h1>
 
     <form *ngIf="!showAll">
-        <div>
+        <div class="main-receive">
             <div>
-
+                <h4>Wallet Name: <strong>{{this.wallet.walletName}} </strong> </h4>
                 <ngx-qrcode cssClass="qr-address" elementType="canvas" [value]="qrString" errorCorrectionLevel="L"></ngx-qrcode>
 
             </div>
@@ -29,10 +29,11 @@
                     address to increase your privacy.
                 </p>
             </div>
+            <button class="cancel-button" *ngIf="showAll" mat-stroked-button (click)="showOneAddress()">← Back to one address</button>
+
         </div>
     </form>
 
-    <button class="cancel-button" *ngIf="showAll" mat-stroked-button (click)="showOneAddress()">← Back to one address</button>
 
     <form *ngIf="showAll">
 

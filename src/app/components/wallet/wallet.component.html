@@ -7,7 +7,7 @@
         <mat-card-content>
             <p>
                 <strong>{{ (wallet.confirmedBalance | coinNotation | number: '1.0-8': this.localeService.locale) || (0 | coinNotation) }}</strong>
-                <small class="text-uppercase"> {{ wallet.coinUnit }}</small>
+                <small class="text-uppercase"><b> {{ wallet.coinUnit }} </b></small>
 
                 <span *ngIf="walletStatistics">
                     <span class="vertical-spacer">|</span>

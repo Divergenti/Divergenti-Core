@@ -6,12 +6,14 @@
     .cancel-button {
         color: white !important;
         margin-bottom: 20px;
+        margin-left: 10px !important;
+
     }
+
     .mat-card-content {
         margin-top: 10px;
         margin-left: 10px;
         justify-content: center;
-        min-width: 70%;
     }
 
     .card-logo {
@@ -31,7 +33,16 @@
     .internal-cards {
         background: white !important;
         color: black;
-        min-height: 260px;
+        height: 300px;
+    }
+
+    .mat-card-actions {
+        margin-left: 0px;
+    }
+
+    .internal-content {
+        margin-bottom: 10px;
+        height: 150px;
     }
 
 

@@ -1,6 +1,13 @@
 .receive
 {
-    color:black;
+    .cancel-button {
+        text-align: center;
+    }
+
+    .main-receive {
+        text-align: center;
+    }
+    color: black;
     .tab-pane {
         margin: 20px;
     }

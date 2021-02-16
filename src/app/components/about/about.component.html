@@ -51,16 +51,18 @@
                     <em>{{ node.dataDirectoryPath }}</em>
                 </span>
                 <ng-template #directoryLink>
-                    <a (click)="openFolder(node.dataDirectoryPath+'/DivergentiMain')" href="javascript:void(0)">
+                    <a (click)="openDataFolder()" href="javascript:void(0)">
                         <em>{{ node.dataDirectoryPath }}</em>
                     </a>
                 </ng-template>
                 <br>
             </p>
+            <div class="button-block">
                 <button class="cancel-button" mat-stroked-button onclick="window.open('https://www.divergenti.cl')">DIVERGENTI WEBSITE</button> &nbsp;
                 <button class="cancel-button" mat-stroked-button onclick="window.open('https://github.com/divergenti')">SOURCE CODE</button> &nbsp;
-                <button class="cancel-button" mat-stroked-button (click)="openFolder(node.dataDirectoryPath+'/DivergentiMain')">OPEN FOLDER WALLET</button> &nbsp;
-        </mat-card-content>
+                <button class="cancel-button" mat-stroked-button (click)="openDataFolder()">OPEN FOLDER WALLET</button> &nbsp;
+            </div>
+            </mat-card-content>
 
     </mat-card>
 </div>
