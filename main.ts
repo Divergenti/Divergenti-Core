@@ -316,7 +316,7 @@ function createWindow() {
         iconpath = nativeImage.createFromPath(path.resolve(__dirname, '..//..//resources//dist//assets//divergenti-core//logo-icon.png'));
     }
     mainWindow = new BrowserWindow({
-        width: 1150,
+        width: 1500,
         icon: iconpath,
         height: 800,
         frame: true,
