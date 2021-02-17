@@ -6,7 +6,7 @@
     "publish": [
         {
             "provider": "github",
-            "owner": "FluidChains",
+            "owner": "Divergenti",
             "repo": "Divergenti-Core"
         }
     ],
