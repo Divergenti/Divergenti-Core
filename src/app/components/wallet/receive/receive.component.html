@@ -28,12 +28,13 @@
                     When this address is used, you will receive another address. Addresses can be used multiple times. Make sure you always use a fresh
                     address to increase your privacy.
                 </p>
-            </div>
-            <button class="cancel-button" *ngIf="showAll" mat-stroked-button (click)="showOneAddress()">← Back to one address</button>
 
+            </div>
         </div>
     </form>
-
+    <div class="centered">
+        <button class="cancel-button" *ngIf="showAll" mat-stroked-button (click)="showOneAddress()">← Back to one address</button>
+    </div>
 
     <form *ngIf="showAll">
 
@@ -78,7 +79,7 @@
 
     </form>
 
-    <div>
+    <div class="centered">
         <button class="cancel-button" *ngIf="!showAll" mat-stroked-button (click)="showAllAddresses()">Show all addresses</button>
     </div>
 

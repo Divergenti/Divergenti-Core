@@ -1,17 +1,22 @@
 .receive
 {
-    .cancel-button {
-        text-align: center;
-    }
+    color: black;
 
     .main-receive {
         text-align: center;
     }
-    color: black;
+
+    .centered {
+        text-align: center  !important;
+    }
     .tab-pane {
         margin: 20px;
     }
 
+    .mat-caption {
+        padding-left: 30%;
+        padding-right: 30%;
+    }
     .tab-pane-line {
 
     }

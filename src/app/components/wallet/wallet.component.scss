@@ -3,6 +3,11 @@
 .wallet
 {
 
+    .text-uppercase {
+        font-size: medium;
+    }
+
+
     .mat-paginator-container {
         background-color: black;;
     }
@@ -152,6 +157,7 @@
        width: 65%;
        align-self: center;
        text-align: justify;
+       margin-left: 22px;
     }
 
     .wallet-info-icon {
